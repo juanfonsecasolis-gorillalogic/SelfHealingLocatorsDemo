@@ -22,7 +22,7 @@ Library that implements self-healing, auto-wait, and selector-optimizations.
 * **Auto-wait:** "waits for elements to be actionable prior to performing actions" (avoid "element cannot be found" error).
 * **Selector-optimization.**
 
-This library doesn't solve the problem of finding a locator with a renamed attribute (e.g. id) by other means, and is constrained by a usage quota [3]:
+This library doesn't solve the problem of finding a locator with a renamed attribute (for instance, a mispelled ID), and it is constrained by an usage quota [3]:
 
 > Subject to the terms of this Agreement, Licensee is granted a right to use the Software for small projects and evaluation purposes without charge provided that use of the Software is within the “Free Usage Quota” published on Licensor’s website
 
@@ -30,6 +30,7 @@ This library doesn't solve the problem of finding a locator with a renamed attri
 
 > The Software contains features that removes technical restrictions and automatically disables the Software upon exceeding the free usage limits.
 
+The [quota mentioned page](deliveryassured.com.au/selenium.webdriver.selfhealing) is broken.
 
 # References
 1. Courtney Zhan. Set up and Run Selenium C# Tests in Visual Studio Code on macOS. Medium, Apr 2, 2023. URL: https://courtneyzhan.medium.com/set-up-and-run-selenium-c-tests-in-visual-studio-code-on-macos-179ee9f4a46e (last consulted on 09/05/2024)
