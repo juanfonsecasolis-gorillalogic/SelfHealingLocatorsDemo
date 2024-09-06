@@ -39,15 +39,19 @@ public class Tests
     // Test proposed on https://testrigor.com/selenium-self-healing/
     public void TestRigorTest()
     {
+        var urlSite1 = "http://r4d4.info/form-button-label";
+        var updateButtonLocatorSite1 = By.XPath("//button[@id='changer']");
+        
+        var urlSite2 = "http://r4d4.info/form-button-label2";
+        var updateButtonLocatorSite2 = By.XPath("//a[@id='pusher']");
+
         var fieldLocator = By.XPath("//input[@id='messageNew']");
-        var updateButtonLocator = By.XPath("//button[@id='changer']");
-        //var updateButtonLocator = By.XPath("//a[@id='pusher']");
         var labelLocator = By.XPath("//p[1]");
         var expectedMessage = "Hello";
 
-        _selfHealingDriver.Navigate().GoToUrl("http://r4d4.info/form-button-label2");
+        _selfHealingDriver.Navigate().GoToUrl(urlSite1);
         _selfHealingDriver.FindElement(fieldLocator).SendKeys(expectedMessage);
-        _selfHealingDriver.FindElement(updateButtonLocator).Click();
+        _selfHealingDriver.FindElement(updateButtonLocatorSite2).Click();
         var current = _selfHealingDriver.FindElement(labelLocator).Text;
         Assert.That(current.Contains(expectedMessage));
     }
