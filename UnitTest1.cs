@@ -6,28 +6,49 @@ namespace SelfHealingLocatorsDemo;
 
 public class Tests
 {
+    ISelfHealingWebDriver _selfHealingDriver;
+
     [SetUp]
     public void Setup()
     {
+        var options = new ChromeOptions();
+        var webDriver = new ChromeDriver(options);
+        _selfHealingDriver = webDriver.ToSelfHealingDriver();
+    }
+
+    [TearDown]
+    public void TearDown()
+    {
+        _selfHealingDriver.Close();
+        _selfHealingDriver.Quit();
     }
 
     [Test]
-    public void Test1()
+    public void GoogleLayout()
     {
-        var options = new ChromeOptions();
-        var webDriver = new ChromeDriver(options);
-        var selfHealingDriver = webDriver.ToSelfHealingDriver();
+        var iFeelLuckyButtonLocator = By.XPath("//input[@name='btnI']");
+        //var iFeelLuckyButtonLocator = By.XPath("//input[@name='btnII']");
 
-        var webUrl = "https://www.google.com";
-        var iFeelLuckyButtonGoodLocator = By.XPath("//input[@name='btnI']");
-        var iFeelLuckyButtonBrokenLocator = By.XPath("//input[@name='btnII']");
-
-        selfHealingDriver.Navigate().GoToUrl(webUrl);
-        var current = selfHealingDriver
-            .FindElement(iFeelLuckyButtonBrokenLocator).GetAttribute("value");
+        _selfHealingDriver.Navigate().GoToUrl("https://www.google.com");
+        var current = _selfHealingDriver
+            .FindElement(iFeelLuckyButtonLocator).GetAttribute("value");
         Assert.That(current, Is.EqualTo("Voy a tener suerte"));
+    }
 
-        selfHealingDriver.Close();
-        selfHealingDriver.Quit();
+    [Test]
+    // Test proposed on https://testrigor.com/selenium-self-healing/
+    public void TestRigorTest()
+    {
+        var fieldLocator = By.XPath("//input[@id='messageNew']");
+        var updateButtonLocator = By.XPath("//button[@id='changer']");
+        //var updateButtonLocator = By.XPath("//a[@id='pusher']");
+        var labelLocator = By.XPath("//p[1]");
+        var expectedMessage = "Hello";
+
+        _selfHealingDriver.Navigate().GoToUrl("http://r4d4.info/form-button-label2");
+        _selfHealingDriver.FindElement(fieldLocator).SendKeys(expectedMessage);
+        _selfHealingDriver.FindElement(updateButtonLocator).Click();
+        var current = _selfHealingDriver.FindElement(labelLocator).Text;
+        Assert.That(current.Contains(expectedMessage));
     }
 }
