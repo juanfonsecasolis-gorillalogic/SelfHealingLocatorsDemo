@@ -74,3 +74,6 @@
 2024-09-12 23:40:38.527  INFO 1 - [7878-exec-1] o.a.c.c.C.[.[localhost].[/]      : Initializing Spring DispatcherServlet 'dispatcherServlet' 
 2024-09-12 23:40:38.529  INFO 1 - [7878-exec-1] o.s.w.s.DispatcherServlet        : Initializing Servlet 'dispatcherServlet' 
 2024-09-12 23:40:38.531  INFO 1 - [7878-exec-1] o.s.w.s.DispatcherServlet        : Completed initialization in 1 ms 
+2024-09-13 00:46:09.922  INFO 1 - [7878-exec-7] healenium                        : [Save Elements] Request: By.xpath(//input[@id='messageNew']) 
+2024-09-13 00:46:10.203  INFO 1 - [878-exec-10] healenium                        : [Save Elements] Request: By.xpath(//button[@id='changer']) 
+2024-09-13 00:46:10.300  INFO 1 - [7878-exec-9] healenium                        : [Save Elements] Request: By.xpath(//p[1]) 
