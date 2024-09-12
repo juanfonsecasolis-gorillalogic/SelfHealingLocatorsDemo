@@ -8,6 +8,7 @@ See [1].
 
 # Execution
 ```
+docker-compose up -d
 mvn clean test
 ```
 

@@ -77,3 +77,6 @@
 2024-09-13 00:46:09.922  INFO 1 - [7878-exec-7] healenium                        : [Save Elements] Request: By.xpath(//input[@id='messageNew']) 
 2024-09-13 00:46:10.203  INFO 1 - [878-exec-10] healenium                        : [Save Elements] Request: By.xpath(//button[@id='changer']) 
 2024-09-13 00:46:10.300  INFO 1 - [7878-exec-9] healenium                        : [Save Elements] Request: By.xpath(//p[1]) 
+2024-09-13 01:03:37.019  INFO 1 - [hutdownHook] ontainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default' 
+2024-09-13 01:03:37.026  INFO 1 - [hutdownHook] c.z.hikari.HikariDataSource      : HikariPool-1 - Shutdown initiated... 
+2024-09-13 01:03:37.030  INFO 1 - [hutdownHook] c.z.hikari.HikariDataSource      : HikariPool-1 - Shutdown completed. 
