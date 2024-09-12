@@ -1,4 +1,4 @@
-package com.browserstack;
+package selfhealinglocators;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -41,7 +41,7 @@ public class SimpleTest {
 
         _driver.navigate().to(urlSite1);
         _driver.findElement(fieldLocator).sendKeys(expectedMessage);
-        _driver.findElement(updateButtonLocatorSite2).click();
+        _driver.findElement(updateButtonLocatorSite1).click();
         String current = _driver.findElement(labelLocator).getText();
         Assert.assertTrue(current.contains(expectedMessage));
     }
