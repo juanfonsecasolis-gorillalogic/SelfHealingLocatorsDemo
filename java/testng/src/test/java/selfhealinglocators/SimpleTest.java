@@ -29,14 +29,13 @@ public class SimpleTest {
 
     @DataProvider(name = "testData")
     public Object[][] testData() {
-        // based on some tests proposed by TestRigor and Helenium
         return new Object[][] {
-            // different button implementation
+            // different button implementation (Test Rigor)
             { baseUrl+"/form-button-label.html",    "//input[@placeholder='Message']",          "//button[@id='changer']" },    // correct
             { baseUrl+"/form-button-label.html",    "//input[@placeholder='Message']",          "//a[@id='pusher']" },          // broken
             { baseUrl+"/form-button-label2.html",   "//input[@placeholder='Message']",          "//button[@id='changer']" },    // broken
             { baseUrl+"/form-button-label2.html",   "//input[@placeholder='Message']",          "//a[@id='pusher']" },          // correct 
-            // different placeholder message
+            // different placeholder message (Healenium)
             { baseUrl+"/form-button-label.html",    "//input[@placeholder='Message']",          "//button[@id='changer']" },    // correct 
             { baseUrl+"/form-button-label.html",    "//input[@placeholder='Enter some text']",  "//button[@id='changer']" },    // broken  
             { baseUrl+"/form-button-label3.html",   "//input[@placeholder='Message']",          "//button[@id='changer']" },    // broken       
