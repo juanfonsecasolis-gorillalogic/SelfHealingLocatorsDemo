@@ -54,7 +54,7 @@ public class SimpleTest {
         new SelfHealingDriverWait(_driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(updateButtonLocator))).click();
 
-        String current = _driver.findElement(By.xpath("//span[@id='displayMessage']")).getText();
-        Assert.assertTrue(current.contains(expectedMessage));
+        String currentMessage = _driver.findElement(By.xpath("//span[@id='displayMessage']")).getText();
+        Assert.assertEquals(expectedMessage, currentMessage);
     }
 }
