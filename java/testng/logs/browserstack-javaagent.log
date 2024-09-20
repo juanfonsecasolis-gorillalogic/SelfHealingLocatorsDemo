@@ -943,3 +943,78 @@
 	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:560)
 	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:572)
 
+08:32:06.830 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.24.0
+08:32:06.833 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 
+08:32:07.055 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {basedir=/Users/juan.fonseca/Repositories/SelfHealingLocatorsDemo/java/testng, user.dir=/Users/juan.fonseca/Repositories/SelfHealingLocatorsDemo/java/testng, localrepository=/Users/juan.fonseca/.m2/repository}
+08:32:07.056 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : /browserstack.yml
+08:32:07.056 [main] ERROR c.b.config.BrowserStackConfig - [Invalid Path] Config file does not exist at any parent directory of /Users/juan.fonseca/Repositories/SelfHealingLocatorsDemo/java/testng. Please include a browserstack.yml/browserstack.yaml file containing configuration for tests.
+08:32:07.057 [main] ERROR c.browserstack.BrowserStackJavaAgent - Something went wrong - java.lang.RuntimeException: [Invalid Path] Config file does not exist at any parent directory of /Users/juan.fonseca/Repositories/SelfHealingLocatorsDemo/java/testng. Please include a browserstack.yml/browserstack.yaml file containing configuration for tests.
+	at com.browserstack.config.BrowserStackConfig.getInstance(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.b(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.a(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.premain(Unknown Source)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:560)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:572)
+
+08:32:46.113 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.24.0
+08:32:46.115 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 
+08:32:46.321 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {basedir=/Users/juan.fonseca/Repositories/SelfHealingLocatorsDemo/java/testng, user.dir=/Users/juan.fonseca/Repositories/SelfHealingLocatorsDemo/java/testng, localrepository=/Users/juan.fonseca/.m2/repository}
+08:32:46.322 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : /browserstack.yml
+08:32:46.322 [main] ERROR c.b.config.BrowserStackConfig - [Invalid Path] Config file does not exist at any parent directory of /Users/juan.fonseca/Repositories/SelfHealingLocatorsDemo/java/testng. Please include a browserstack.yml/browserstack.yaml file containing configuration for tests.
+08:32:46.323 [main] ERROR c.browserstack.BrowserStackJavaAgent - Something went wrong - java.lang.RuntimeException: [Invalid Path] Config file does not exist at any parent directory of /Users/juan.fonseca/Repositories/SelfHealingLocatorsDemo/java/testng. Please include a browserstack.yml/browserstack.yaml file containing configuration for tests.
+	at com.browserstack.config.BrowserStackConfig.getInstance(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.b(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.a(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.premain(Unknown Source)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:560)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:572)
+
+08:33:22.800 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.24.0
+08:33:22.803 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 
+08:33:23.023 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {basedir=/Users/juan.fonseca/Repositories/SelfHealingLocatorsDemo/java/testng, user.dir=/Users/juan.fonseca/Repositories/SelfHealingLocatorsDemo/java/testng, localrepository=/Users/juan.fonseca/.m2/repository}
+08:33:23.024 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : /browserstack.yml
+08:33:23.024 [main] ERROR c.b.config.BrowserStackConfig - [Invalid Path] Config file does not exist at any parent directory of /Users/juan.fonseca/Repositories/SelfHealingLocatorsDemo/java/testng. Please include a browserstack.yml/browserstack.yaml file containing configuration for tests.
+08:33:23.025 [main] ERROR c.browserstack.BrowserStackJavaAgent - Something went wrong - java.lang.RuntimeException: [Invalid Path] Config file does not exist at any parent directory of /Users/juan.fonseca/Repositories/SelfHealingLocatorsDemo/java/testng. Please include a browserstack.yml/browserstack.yaml file containing configuration for tests.
+	at com.browserstack.config.BrowserStackConfig.getInstance(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.b(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.a(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.premain(Unknown Source)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:560)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:572)
+
+08:39:27.088 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.24.0
+08:39:27.092 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 
+08:39:27.271 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {basedir=/Users/juan.fonseca/Repositories/SelfHealingLocatorsDemo/java/testng, user.dir=/Users/juan.fonseca/Repositories/SelfHealingLocatorsDemo/java/testng, localrepository=/Users/juan.fonseca/.m2/repository}
+08:39:27.272 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : /browserstack.yml
+08:39:27.272 [main] ERROR c.b.config.BrowserStackConfig - [Invalid Path] Config file does not exist at any parent directory of /Users/juan.fonseca/Repositories/SelfHealingLocatorsDemo/java/testng. Please include a browserstack.yml/browserstack.yaml file containing configuration for tests.
+08:39:27.273 [main] ERROR c.browserstack.BrowserStackJavaAgent - Something went wrong - java.lang.RuntimeException: [Invalid Path] Config file does not exist at any parent directory of /Users/juan.fonseca/Repositories/SelfHealingLocatorsDemo/java/testng. Please include a browserstack.yml/browserstack.yaml file containing configuration for tests.
+	at com.browserstack.config.BrowserStackConfig.getInstance(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.b(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.a(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.premain(Unknown Source)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:560)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:572)
+
+09:52:18.520 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.24.0
+09:52:18.522 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 
+09:52:18.667 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {basedir=/Users/juan.fonseca/Repositories/SelfHealingLocatorsDemo/java/testng, user.dir=/Users/juan.fonseca/Repositories/SelfHealingLocatorsDemo/java/testng, localrepository=/Users/juan.fonseca/.m2/repository}
+09:52:18.668 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : /browserstack.yml
+09:52:18.668 [main] ERROR c.b.config.BrowserStackConfig - [Invalid Path] Config file does not exist at any parent directory of /Users/juan.fonseca/Repositories/SelfHealingLocatorsDemo/java/testng. Please include a browserstack.yml/browserstack.yaml file containing configuration for tests.
+09:52:18.669 [main] ERROR c.browserstack.BrowserStackJavaAgent - Something went wrong - java.lang.RuntimeException: [Invalid Path] Config file does not exist at any parent directory of /Users/juan.fonseca/Repositories/SelfHealingLocatorsDemo/java/testng. Please include a browserstack.yml/browserstack.yaml file containing configuration for tests.
+	at com.browserstack.config.BrowserStackConfig.getInstance(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.b(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.a(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.premain(Unknown Source)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:560)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:572)
+
