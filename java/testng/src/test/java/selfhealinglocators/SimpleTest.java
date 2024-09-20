@@ -1,19 +1,15 @@
 package selfhealinglocators;
 
 import java.time.Duration;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
 import com.epam.healenium.SelfHealingDriverWait;
-
 import selfhealinglocators.DriverManager.BrowserType;
 
 public class SimpleTest {
@@ -31,29 +27,34 @@ public class SimpleTest {
         _driver.quit();
     }
 
-    @DataProvider(name = "testRigor")
-    public Object[][] testRigor() {
+    @DataProvider(name = "testData")
+    public Object[][] testData() {
+        // based on some tests proposed by TestRigor and Helenium
         return new Object[][] {
-            { baseUrl+"/form-button-label.html", "//button[@id='changer']" },      // locator 1
-            { baseUrl+"/form-button-label2.html", "//button[@id='changer']" },     // locator 1
-            { baseUrl+"/form-button-label.html", "//a[@id='pusher']" },            // locator 2
-            { baseUrl+"/form-button-label2.html", "//a[@id='pusher']" },           // locator 2
+            // different button implementation
+            { baseUrl+"/form-button-label.html",    "//input[@placeholder='Message']",          "//button[@id='changer']" },    // correct
+            { baseUrl+"/form-button-label.html",    "//input[@placeholder='Message']",          "//a[@id='pusher']" },          // broken
+            { baseUrl+"/form-button-label2.html",   "//input[@placeholder='Message']",          "//button[@id='changer']" },    // broken
+            { baseUrl+"/form-button-label2.html",   "//input[@placeholder='Message']",          "//a[@id='pusher']" },          // correct 
+            // different placeholder message
+            { baseUrl+"/form-button-label.html",    "//input[@placeholder='Message']",          "//button[@id='changer']" },    // correct 
+            { baseUrl+"/form-button-label.html",    "//input[@placeholder='Enter some text']",  "//button[@id='changer']" },    // broken  
+            { baseUrl+"/form-button-label3.html",   "//input[@placeholder='Message']",          "//button[@id='changer']" },    // broken       
+            { baseUrl+"/form-button-label3.html",   "//input[@placeholder='Enter some text']",  "//button[@id='changer']" }     // correct
         };
     }
 
-    @Test(dataProvider = "testRigor")
-    public void TestRigorTest(String url, String updateButtonLocator)
+    @Test(dataProvider = "testData")
+    public void TestRigorTest(String url, String inputTextLocator, String updateButtonLocator)
     {
-        String expectedMessage = "Hello";
+        String expectedMessage = "Testing healenium!";
         _driver.navigate().to(url);
-        _driver.findElement(By.xpath("//input[@id='messageNew']")).sendKeys(expectedMessage);
+        _driver.findElement(By.xpath(inputTextLocator)).sendKeys(expectedMessage);
         
-        // beginning of critical section
         new SelfHealingDriverWait(_driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(updateButtonLocator))).click();
-        // end of critical section
 
-        String current = _driver.findElement(By.xpath("//p[1]")).getText();
+        String current = _driver.findElement(By.xpath("//span[@id='displayMessage']")).getText();
         Assert.assertTrue(current.contains(expectedMessage));
     }
 }
