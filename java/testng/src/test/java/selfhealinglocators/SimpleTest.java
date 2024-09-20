@@ -19,6 +19,7 @@ import selfhealinglocators.DriverManager.BrowserType;
 public class SimpleTest {
 
     WebDriver _driver;
+    String baseUrl = "https://juanfonsecagl.github.io/juanfonsecaGL/selfHealingTests";
 
     @BeforeMethod()
     public void setUp() throws Exception{
@@ -33,10 +34,10 @@ public class SimpleTest {
     @DataProvider(name = "testRigor")
     public Object[][] testRigor() {
         return new Object[][] {
-            { "http://r4d4.info/form-button-label", "//button[@id='changer']" },    // good locator
-            { "http://r4d4.info/form-button-label2", "//a[@id='pusher']" },         // good locator
-            { "http://r4d4.info/form-button-label", "//a[@id='pusher']" },          // wrong locator
-            { "http://r4d4.info/form-button-label2", "//button[@id='changer']" }    // wrong locator
+            { baseUrl+"/form-button-label.html", "//button[@id='changer']" },      // locator 1
+            { baseUrl+"/form-button-label2.html", "//button[@id='changer']" },     // locator 1
+            { baseUrl+"/form-button-label.html", "//a[@id='pusher']" },            // locator 2
+            { baseUrl+"/form-button-label2.html", "//a[@id='pusher']" },           // locator 2
         };
     }
 
