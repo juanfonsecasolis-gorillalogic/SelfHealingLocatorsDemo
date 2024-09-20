@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Local">
+    <test name="HealeniumTest">
+        <classes>
+            <class name="selfhealinglocators.HealeniumTest"/>
+        </classes>
+    </test>
+    <test name="TestRigorTest">
+        <classes>
+            <class name="selfhealinglocators.TestRigorTest"/>
+        </classes>
+    </test>
+</suite>

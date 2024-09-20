@@ -15,7 +15,7 @@
         <testng.version>LATEST</testng.version>
         <selenium.version>LATEST</selenium.version>
         <healenium.version>LATEST</healenium.version>
-        <config.file>config/simple-test.xml</config.file>
+        <config.file>config/tests.xml</config.file>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     
@@ -123,27 +123,7 @@
                         <version>${surefire.version}</version>
                         <configuration>
                             <suiteXmlFiles>
-                                <suiteXmlFile>config/sample-local-test.testng.xml</suiteXmlFile>
-                            </suiteXmlFiles>
-                            <argLine>
-                            </argLine>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-
-        <profile>
-            <id>sample-test</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <version>${surefire.version}</version>
-                        <configuration>
-                            <suiteXmlFiles>
-                                <suiteXmlFile>config/sample-test.testng.xml</suiteXmlFile>
+                                <suiteXmlFile>config/tests.xml</suiteXmlFile>
                             </suiteXmlFiles>
                             <argLine>
                             </argLine>
