@@ -13,13 +13,38 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <surefire.version>2.22.0</surefire.version>
         <testng.version>LATEST</testng.version>
-        <selenium.version>LATEST</selenium.version>
-        <healenium.version>LATEST</healenium.version>
-        <config.file>config/tests.xml</config.file>
+        <selenium.version>4.25.0</selenium.version>
+        <healenium.version>3.5.3</healenium.version>
+        <selenium.remoteDriver.version>4.25.0</selenium.remoteDriver.version>
+        <testRigor.version>0.1.1-SNAPSHOT</testRigor.version>
+        <config.file1>config/NoSelfHealing.xml</config.file1>
+        <config.file2>config/Testhealenium.xml</config.file2>
+        <config.file3>config/TestRigorTest.xml</config.file3>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    
+
+    <distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
+
     <dependencies>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-remote-driver</artifactId>
+            <version>${selenium.remoteDriver.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.testrigor</groupId>
+            <artifactId>self-healing-selenium-4</artifactId>
+            <version>${testRigor.version}</version>
+        </dependency>
         <!--https://stackoverflow.com/questions/37731507/noclassdeffounderror-com-google-inject-injector-when-running-simple-neo4j-test-->
         <dependency>
             <groupId>com.google.inject</groupId>
@@ -77,10 +102,13 @@
                 <version>${surefire.version}</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>${config.file}</suiteXmlFile>
+                        <suiteXmlFile>${config.file1}</suiteXmlFile>
+                        <suiteXmlFile>${config.file2}</suiteXmlFile>
+                        <suiteXmlFile>${config.file3}</suiteXmlFile>
                     </suiteXmlFiles>
                     <argLine>
                     </argLine>
+                    <reportFormat>plain</reportFormat>
                 </configuration>
             </plugin>
             <plugin>
