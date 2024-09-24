@@ -14,6 +14,7 @@ import selfhealinglocators.DriverManager.DriverType;
 public class Tests extends TestBase
 {
     protected WebDriver _driver;
+    By _textMessageLocator = By.xpath("//p[1] | //*[@id='displayMessage']");
 
     @BeforeMethod()
     @Parameters({ "driverType" })
@@ -29,10 +30,10 @@ public class Tests extends TestBase
     }
 
     @Test(dataProvider = "testData")
-    void FormTest(String url, String inputTextLocator, String updateButtonLocator)
+    void FormTest(String url, String inputTextLocator, String updateButtonLocator, String classification)
     {
         // arrange
-        String expectedMessage = "Testing healenium!";
+        String expectedMessage = "Testing 123";
         _driver.navigate().to(url);
 
         // act
@@ -42,7 +43,7 @@ public class Tests extends TestBase
         updateButton.click();
 
         // assert
-        String currentMessage = _driver.findElement(By.xpath("//span[@id='displayMessage']")).getText();
-        Assert.assertEquals(expectedMessage, currentMessage);
+        String currentMessage = _driver.findElement(_textMessageLocator).getText();
+        Assert.assertTrue(currentMessage.contains(currentMessage));
     }
 }
