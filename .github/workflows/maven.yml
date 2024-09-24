@@ -18,6 +18,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    container:
+      image: docker
 
     steps:
     - uses: actions/checkout@v4
