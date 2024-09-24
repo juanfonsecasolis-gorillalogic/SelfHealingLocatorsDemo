@@ -30,11 +30,6 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-        
-    #- name: Set up Maven
-    #  uses: stCarolas/setup-maven@v5
-    #  with:
-    #    maven-version: 3.8.2
 
     - name: Set up Maven
       run: |
@@ -42,6 +37,12 @@ jobs:
         tar -xvf apache-maven-3.9.9-bin.tar.gz
         mv apache-maven-3.9.9 /opt/
         echo "/opt/apache-maven-3.9.9/bin" >> $GITHUB_PATH
+
+    - name: Set up system variables
+      run: |
+        echo $JAVA_HOME
+        java --version
+        which java
 
     - name: Build with Maven
       working-directory: ./java/testng
