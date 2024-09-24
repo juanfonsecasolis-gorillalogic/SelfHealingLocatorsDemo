@@ -46,7 +46,8 @@ public class DriverManager {
                 options2.addArguments("--remote-allow-origins=*");
                 options2.addArguments("--headless=true");  
                 WebDriver selfHealDriver = TestRigor.selfHeal(
-                    new ChromeDriver(options2), 
+                    //new ChromeDriver(options2), 
+                    new RemoteWebDriver(_hubUrl, options2);
                     "o2iI0g54YEfCYq5WAMp2oRop3ox9laQWZdGoKFjeyxqOmv6LmyTm"
                 );
                 ((com.testrigor.selfhealingselenium.v4.application.SelfHealingDriver) selfHealDriver).setTestCaseName("test"); //This needs to be configure for each @Test
