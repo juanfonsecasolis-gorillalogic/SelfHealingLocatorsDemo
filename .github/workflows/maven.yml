@@ -30,14 +30,19 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-
-    - name: Raise Healenium docker servers
-      working-directory: ./java/testng/healenium
-      run:  docker-compose up -d
+        
+    - name: Set up Maven
+      uses: stCarolas/setup-maven@v5
+      with:
+        maven-version: 3.8.2
     
     - name: Build with Maven
       working-directory: ./java/testng
       run: mvn compile
+
+    - name: Raise Healenium docker servers
+      working-directory: ./java/testng/healenium
+      run:  docker-compose up -d
 
     - name: Test with Maven
       working-directory: ./java/testng
