@@ -1,3 +1,6 @@
+.DS_Store
+healenium/screenshots
+
 target/
 logs/
 healenium/logs/

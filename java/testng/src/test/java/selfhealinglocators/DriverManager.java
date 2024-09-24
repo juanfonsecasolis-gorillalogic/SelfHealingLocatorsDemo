@@ -21,21 +21,23 @@ public class DriverManager {
 
     public static WebDriver GetWebDriver(DriverType driverType) throws Exception
     {
+        @SuppressWarnings("deprecation")
+        URL _hubUrl = new URL("http://127.0.0.1:8085/wd/hub");
+
         switch (driverType) {
 
             case Chrome:
-                WebDriverManager.chromedriver().setup();  
+                //WebDriverManager.chromedriver().setup();  
                 ChromeOptions options0 = new ChromeOptions();
                 options0.addArguments("--remote-allow-origins=*"); 
                 options0.addArguments("--headless=true"); 
-                return new ChromeDriver(options0);
+                return new RemoteWebDriver(_hubUrl, options0);
 
             case ChromeHealenium:
                 ChromeOptions options1 = new ChromeOptions();
                 options1.addArguments("--no-sandbox");
                 options1.addArguments("--disable-dev-shm-usage"); 
-                @SuppressWarnings("deprecation")
-                WebDriver delegate = new RemoteWebDriver(new URL("http://127.0.0.1:8085/wd/hub"), options1);
+                WebDriver delegate = new RemoteWebDriver(_hubUrl, options1);
                 return SelfHealingDriver.create(delegate);
 
             case ChromeTestRigor:
