@@ -40,9 +40,8 @@ jobs:
 
     - name: Set up system variables
       run: |
-        echo $JAVA_HOME
+        echo $JAVA_HOME  >> $GITHUB_PATH
         java --version
-        which java
 
     - name: Build with Maven
       working-directory: ./java/testng
