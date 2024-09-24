@@ -42,10 +42,9 @@ jobs:
       run: mvn test
 
     - uses: actions/upload-artifact@v4
-      working-directory: ./java/testng/target/surefire-reports
       with:
         name: my-artifact
-        path: path/to/artifact/ # or path/to/artifact
+        path: ./java/testng/target/surefire-reports
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
