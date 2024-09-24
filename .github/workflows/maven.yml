@@ -36,12 +36,14 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-        cache: maven
+        #cache: maven
 
     - name: Set up system variables
       run: |
         echo $JAVA_HOME >> $GITHUB_PATH
+        echo $GITHUB_PATH
         java --version
+      continue-on-error: false
 
     - name: Build with Maven
       working-directory: ./java/testng
