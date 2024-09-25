@@ -19,7 +19,7 @@ jobs:
 
     runs-on: ubuntu-latest
     container:
-      image: openjdk
+      image: cimg/openjdk
 
     steps:
     - uses: actions/checkout@v4
