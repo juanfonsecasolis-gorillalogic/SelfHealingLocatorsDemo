@@ -38,16 +38,24 @@ jobs:
         distribution: 'temurin'
         #cache: maven
 
-    - name: Set up system variables
+    - name: System Variables 1
       run: |
         echo $GITHUB_PATH
-        echo "-------------------------"
+
+    - name: System Variables 2
+      run: |
         echo $JAVA_HOME
-        echo "-------------------------"
+        
+    - name: System Variables 3
+      run: |
         echo $JAVA_HOME >> $GITHUB_PATH
-        echo "-------------------------"
+        
+    - name: System Variables 4
+      run: |
         echo $GITHUB_PATH
-        echo "-------------------------"
+        
+    - name: System Variables 5
+      run: |
         java --version
 
     - name: Build with Maven
