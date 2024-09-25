@@ -57,6 +57,7 @@ jobs:
     - name: System Variables 5
       run: |
         java --version
+      continue-on-error: true
 
     - name: Build with Maven
       working-directory: ./java/testng
