@@ -36,7 +36,8 @@ jobs:
       with:
         distribution: 'oracle'
         java-version: '21'
-        
+
+    # https://stackoverflow.com/questions/78895468/java-home-environment-variable-missing-bin-at-the-end-in-ubuntu-github-actions
     - run: |
         ls /__t/Java_Oracle_jdk/21/x64/bin
         /__t/Java_Oracle_jdk/21/x64/bin/java --version
