@@ -27,7 +27,7 @@ jobs:
     - uses: schmiddim/action-wget-unzip@v2
       with:
         url: https://dlcdn.apache.org/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.tar.gz
-        destination: /opt/apache-maven-3.9.9/bin
+        destination: /opt
 
     - name: Set up Maven
       run: |
