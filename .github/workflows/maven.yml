@@ -24,16 +24,17 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - uses: schmiddim/action-wget-unzip@v2
-      with:
-        url: https://dlcdn.apache.org/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.tar.gz
-        destination: /opt
+    #- uses: schmiddim/action-wget-unzip@v2
+    #  with:
+    #    url: https://dlcdn.apache.org/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.tar.gz
+    #    destination: /opt
 
     - name: Set up Maven
       run: |
-        #wget https://dlcdn.apache.org/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.tar.gz
-        #tar -xvf apache-maven-3.9.9-bin.tar.gz
-        #mv apache-maven-3.9.9 /opt/
+        apt install wget
+        wget https://dlcdn.apache.org/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.tar.gz
+        tar -xvf apache-maven-3.9.9-bin.tar.gz
+        mv apache-maven-3.9.9 /opt/
         echo "/opt/apache-maven-3.9.9/bin" >> $GITHUB_PATH
     
     #- name: Set up JDK
