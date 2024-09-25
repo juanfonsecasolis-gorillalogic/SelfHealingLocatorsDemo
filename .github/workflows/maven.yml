@@ -57,6 +57,7 @@ jobs:
     - name: System Variables 5
       run: |
         java --version
+        /__t/Java_Oracle_jdk/21/x64/bin/java --version
       continue-on-error: true
 
     - name: Build with Maven
