@@ -31,12 +31,13 @@ jobs:
         mv apache-maven-3.9.9 /opt/
         echo "/opt/apache-maven-3.9.9/bin" >> $GITHUB_PATH
     
-    #- name: Set up JDK
-    #  uses: actions/setup-java@v4
-    #  with:
-    #    java-version: '21'
-    #    distribution: oracle
-    #    cache: maven
+    - name: Set up JDK
+    - uses: actions/setup-java@v4
+      with:
+        distribution: 'oracle'
+        java-version: '21'
+        
+    - run: java --version
 
     - name: System Variables 1
       run: |
@@ -53,11 +54,6 @@ jobs:
     - name: System Variables 4
       run: |
         echo $GITHUB_PATH
-        
-    - name: System Variables 5
-      run: |
-        java --version
-      continue-on-error: true
 
     - name: Build with Maven
       working-directory: ./java/testng
