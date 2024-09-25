@@ -19,15 +19,10 @@ jobs:
 
     runs-on: ubuntu-latest
     container:
-      image: cimg/openjdk
+      image: docker
 
     steps:
     - uses: actions/checkout@v4
-
-    #- uses: schmiddim/action-wget-unzip@v2
-    #  with:
-    #    url: https://dlcdn.apache.org/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.tar.gz
-    #    destination: /opt
 
     - name: Set up Maven
       run: |
