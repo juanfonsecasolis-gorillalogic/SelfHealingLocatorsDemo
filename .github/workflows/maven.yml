@@ -39,15 +39,13 @@ jobs:
       working-directory: ./java/testng
       run: mvn compile -q
 
-    - name: Docker Compose with Tests Action
-      uses: adambirds/docker-compose-action@v1.5.0    
-      with:
-        compose-file: docker-compose.yaml
-        working-directory: ./java/testng/healenium
+    - run: pwd
 
-    - name: Raise Healenium docker servers
-      working-directory: ./java/testng/healenium
-      run:  docker-compose up -d
+    - name: Docker Compose with Tests Action
+      uses: adambirds/docker-compose-action@v1.5.0
+      with:
+        compose-file: healenium/docker-compose.yaml
+        
 
     - name: Test with Maven
       working-directory: ./java/testng
