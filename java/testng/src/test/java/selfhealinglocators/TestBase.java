@@ -18,9 +18,9 @@ public class TestBase
 
             // different placeholder for input (scenario proposed by Healenium)
             { baseUrl+"/form-button-label.html",    "//input[@placeholder='Message']",          "//button[@id='changer']", "correct" }, 
+            { baseUrl+"/form-button-label3.html",   "//input[@placeholder='Enter some text']",  "//button[@id='changer']", "correct" },
             { baseUrl+"/form-button-label.html",    "//input[@placeholder='Enter some text']",  "//button[@id='changer']", "broken" },  
-            { baseUrl+"/form-button-label3.html",   "//input[@placeholder='Message']",          "//button[@id='changer']", "broken" },       
-            { baseUrl+"/form-button-label3.html",   "//input[@placeholder='Enter some text']",  "//button[@id='changer']", "correct" }
+            { baseUrl+"/form-button-label3.html",   "//input[@placeholder='Message']",          "//button[@id='changer']", "broken" }
         };
     }
 }
