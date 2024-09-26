@@ -29,12 +29,6 @@ jobs:
       with:
         java-version: 21
         distribution: oracle
- 
-    #- name: Set up JDK
-    #  uses: actions/setup-java@v4
-    #  with:
-    #    distribution: 'oracle'
-    #    java-version: '21'
 
     - name: Set up Maven
       run: |
@@ -42,28 +36,6 @@ jobs:
         tar -xvf apache-maven-3.9.9-bin.tar.gz
         mv apache-maven-3.9.9 /opt/
         echo "/opt/apache-maven-3.9.9/bin" >> $GITHUB_PATH
-
-    - run: |
-        which java
-        ls -l /opt/hostedtoolcache/Java_Oracle_jdk/21/x64
-        ./opt/hostedtoolcache/Java_Oracle_jdk/21/x64/bin/java --version
-      continue-on-error: true
-
-    - name: System Variables 1
-      run: |
-        echo $GITHUB_PATH
-
-    - name: System Variables 2
-      run: |
-        echo $JAVA_HOME
-        
-    - name: System Variables 3
-      run: |
-        echo $JAVA_HOME >> $GITHUB_PATH
-        
-    - name: System Variables 4
-      run: |
-        echo $GITHUB_PATH
 
     - name: Build with Maven
       working-directory: ./java/testng
