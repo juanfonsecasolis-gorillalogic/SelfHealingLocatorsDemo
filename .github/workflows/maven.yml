@@ -38,9 +38,8 @@ jobs:
         echo "/opt/apache-maven-3.9.9/bin" >> $GITHUB_PATH
 
     - run: |
-        which java
-        file /__t/Java_Oracle_jdk/21/x64/bin
-        /__t/Java_Oracle_jdk/21/x64/bin/java --version
+        ls -l /__t/Java_Oracle_jdk/21/x64/bin/
+        ./__t/Java_Oracle_jdk/21/x64/bin/java --version
       continue-on-error: false
 
     - name: System Variables 1
