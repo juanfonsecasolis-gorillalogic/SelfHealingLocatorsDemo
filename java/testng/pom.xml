@@ -40,10 +40,15 @@
             <artifactId>selenium-remote-driver</artifactId>
             <version>${selenium.remoteDriver.version}</version>
         </dependency>
-        <dependency>
+        <!--dependency>
             <groupId>com.testrigor</groupId>
             <artifactId>self-healing-selenium-4</artifactId>
             <version>${testRigor.version}</version>
+        </dependency-->
+        <dependency>
+            <groupId>com.testrigor</groupId>
+            <artifactId>self-healing-selenium-3</artifactId>
+            <version>0.1.0</version>
         </dependency>
         <!--https://stackoverflow.com/questions/37731507/noclassdeffounderror-com-google-inject-injector-when-running-simple-neo4j-test-->
         <dependency>
