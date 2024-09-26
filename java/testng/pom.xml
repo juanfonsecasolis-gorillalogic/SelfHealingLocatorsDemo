@@ -9,8 +9,8 @@
     <packaging>jar</packaging>
 
     <properties>
-        <maven.compiler.source>4.0</maven.compiler.source>
-        <maven.compiler.target>4.0</maven.compiler.target>
+        <maven.compiler.source>21.0</maven.compiler.source>
+        <maven.compiler.target>21.0</maven.compiler.target>
         <surefire.version>2.22.0</surefire.version>
         <testng.version>LATEST</testng.version>
         <selenium.version>LATEST</selenium.version>
