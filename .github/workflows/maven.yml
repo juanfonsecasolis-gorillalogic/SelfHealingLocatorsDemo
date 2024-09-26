@@ -18,8 +18,6 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    container:
-      image: docker
 
     steps:
     - uses: actions/checkout@v4
@@ -40,6 +38,12 @@ jobs:
     - name: Build with Maven
       working-directory: ./java/testng
       run: mvn compile -q
+
+    - name: Docker Compose with Tests Action
+      uses: adambirds/docker-compose-action@v1.5.0    
+      with:
+        compose-file: docker-compose.yaml
+        working-directory: ./java/testng/healenium
 
     - name: Raise Healenium docker servers
       working-directory: ./java/testng/healenium
