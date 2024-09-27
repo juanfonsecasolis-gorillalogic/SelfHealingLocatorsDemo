@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import com.testrigor.selfhealingselenium.v4.TestRigor;
-import com.testrigor.selfhealingselenium.v4.application.SelfHealingDriver;
 import java.net.URL;
 
 public class DriverManager
@@ -18,7 +17,6 @@ public class DriverManager
         switch (driverType) {
 
             case Chrome:
-                //WebDriverManager.chromedriver().setup();  
                 ChromeOptions options0 = new ChromeOptions();
                 options0.addArguments("--remote-allow-origins=*"); 
                 options0.addArguments("--headless=true"); 
@@ -40,7 +38,6 @@ public class DriverManager
                     new RemoteWebDriver(_hubUrl, options2),
                     "o2iI0g54YEfCYq5WAMp2oRop3ox9laQWZdGoKFjeyxqOmv6LmyTm"
                 );
-                ((SelfHealingDriver) selfHealDriver).setTestCaseName("test"); //This needs to be configure for each @Test
                 return selfHealDriver;
 
             default:

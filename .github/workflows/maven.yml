@@ -37,7 +37,9 @@ jobs:
 
     - name: Build with Maven
       working-directory: ./java/testng
-      run: mvn compile -q
+      run: 
+        mvn clean install
+        mvn compile -q
 
     - name: Docker Compose with Tests Action
       uses: adambirds/docker-compose-action@v1.5.0
