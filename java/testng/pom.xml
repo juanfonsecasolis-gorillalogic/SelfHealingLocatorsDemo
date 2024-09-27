@@ -9,8 +9,7 @@
     <packaging>jar</packaging>
 
     <properties>
-        <maven.compiler.source>21.0</maven.compiler.source>
-        <maven.compiler.target>21.0</maven.compiler.target>
+        <mavenCompilerVersion>8</mavenCompilerVersion>
         <surefire.version>2.22.0</surefire.version>
         <testng.version>LATEST</testng.version>
         <selenium.version>LATEST</selenium.version>
@@ -42,15 +41,14 @@
         </dependency>
         <!--dependency>
             <groupId>com.testrigor</groupId>
-            <artifactId>self-healing-selenium-4</artifactId>
-            <version>${testRigor.version}</version>
+            <artifactId>self-healing-selenium-3</artifactId>
+            <version>0.1.0</version>
         </dependency-->
         <dependency>
             <groupId>com.testrigor</groupId>
-            <artifactId>self-healing-selenium-3</artifactId>
-            <version>0.1.0</version>
+            <artifactId>self-healing-selenium-4</artifactId>
+            <version>0.1.1-SNAPSHOT </version>
         </dependency>
-        <!--https://stackoverflow.com/questions/37731507/noclassdeffounderror-com-google-inject-injector-when-running-simple-neo4j-test-->
         <dependency>
             <groupId>com.google.inject</groupId>
             <artifactId>guice</artifactId>
@@ -98,8 +96,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <source>${maven.compiler.source}</source>
-                    <target>${maven.compiler.target}</target>
+                    <source>${mavenCompilerVersion}</source>
+                    <target>${mavenCompilerVersion}</target>
                 </configuration>
             </plugin>
             <plugin>

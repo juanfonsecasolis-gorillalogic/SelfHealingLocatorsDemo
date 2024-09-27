@@ -1,23 +1,15 @@
 package selfhealinglocators;
 
-import java.net.URL;
 import org.apache.commons.lang3.NotImplementedException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import com.epam.healenium.SelfHealingDriver;
 import com.testrigor.selfhealingselenium.v4.TestRigor;
-import org.openqa.selenium.chrome.ChromeDriver;
+import com.testrigor.selfhealingselenium.v4.application.SelfHealingDriver;
+import java.net.URL;
 
-public class DriverManager {
-    
-    enum DriverType
-    {
-        Chrome,
-        ChromeHealenium,
-        ChromeTestRigor
-    }
-
+public class DriverManager
+{
     public static WebDriver GetWebDriver(DriverType driverType) throws Exception
     {
         @SuppressWarnings("deprecation")
@@ -37,7 +29,7 @@ public class DriverManager {
                 options1.addArguments("--no-sandbox");
                 options1.addArguments("--disable-dev-shm-usage"); 
                 WebDriver delegate = new RemoteWebDriver(_hubUrl, options1);
-                return SelfHealingDriver.create(delegate);
+                return com.epam.healenium.SelfHealingDriver.create(delegate);
 
             case ChromeTestRigor:
                 ChromeOptions options2 = new ChromeOptions();
@@ -48,12 +40,11 @@ public class DriverManager {
                     new RemoteWebDriver(_hubUrl, options2),
                     "o2iI0g54YEfCYq5WAMp2oRop3ox9laQWZdGoKFjeyxqOmv6LmyTm"
                 );
-                ((com.testrigor.selfhealingselenium.v4.application.SelfHealingDriver) selfHealDriver).setTestCaseName("test"); //This needs to be configure for each @Test
+                ((SelfHealingDriver) selfHealDriver).setTestCaseName("test"); //This needs to be configure for each @Test
                 return selfHealDriver;
 
             default:
                 throw new NotImplementedException("Unknown driver type: '" + driverType + "'");
         }
-    }
-
+    }    
 }
