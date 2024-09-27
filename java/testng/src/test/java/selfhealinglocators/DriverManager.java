@@ -4,7 +4,7 @@ import org.apache.commons.lang3.NotImplementedException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import com.testrigor.selfhealingselenium.v4.TestRigor;
+import com.testrigor.selfhealingselenium.TestRigor;
 import java.net.URL;
 
 public class DriverManager
