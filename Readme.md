@@ -3,7 +3,7 @@
 Juan M. Fonseca Solís</br>
 Gorilla Logic, Sabana Business Center 10th Floor, Bv. Ernesto Rohrmoser, San José.
 
-<img width="300" height="50" src='img/GL_Logo_Primary_Blk.png'/>
+<img width="300" height="100" src='img/GL_Logo_Primary_Blk.png'/>
 
 ## Abstract
 
