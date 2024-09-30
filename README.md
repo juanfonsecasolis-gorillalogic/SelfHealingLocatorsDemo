@@ -3,7 +3,7 @@
 Juan M. Fonseca Solís</br>
 Gorilla Logic, Sabana Business Center 10th Floor, Bv. Ernesto Rohrmoser, San José.
 
-<img width="275" height="100" src='img/GL_Logo_Primary_Blk.png'/>
+<img width="250" height="100" src='img/GL_Logo_Primary_Blk.png'/>
 
 ## Abstract
 
@@ -11,10 +11,21 @@ Gorilla Logic, Sabana Business Center 10th Floor, Bv. Ernesto Rohrmoser, San Jos
 
 **Importance.** Self-healing drivers can reduce automation maintenance costs by automatically detecting changes in the web page layout and updating locators to ensure the test cases are functional [1].
 
-**Method.** For DotNet we implemented a sample project using Selenium.WebDriver.SelfHealing (the only available package in the NuGet repositories), and for Java we implemented a project that uses TestRigor and Healenium [2, 3]. We evaluated all implementations against the tests proposed by each one:
+**Method.** For DotNet we implemented a sample project using Selenium.WebDriver.SelfHealing (the only available package in the NuGet repositories), and for Java we implemented a project that uses TestRigor and Healenium [2, 3]. We evaluated all implementations against the sites below:
 
-    * Test #1: 
-    * Test #2: 
+| Page | Input box | Button |
+| --- | --- | --- |
+| [Site #1](selfHealingTests/form-button-label.html)  | `\\input[@placeholder="Message"]`           | `\\button[@id='changer']` |
+| [Site #2](selfHealingTests/form-button-label2.html) | `\\input[@placeholder="Message"]`           | `\\a[@id='pusher']` |
+| [Site #3](selfHealingTests/form-button-label3.html) | `\\input[@placeholder="Enter some text"]`   | `\\button[@id='changer']` | 
+
+Test cases:
+| TC | Site | Locator 1 | Locator 2 | Type |
+| --- | --- | --- | --- | --- |
+| TC5 | Site1 | "//input[@placeholder='Message']" | "//button[@id='changer']" | "correct" |
+| TC6 | Site3 | "//input[@placeholder='Enter some text']" | "//button[@id='changer']" | "correct" |
+| TC7 | Site1 | "//input[@placeholder='Enter some text']" | "//button[@id='changer']" | "broken" | 
+| TC8 | Site3 | "//input[@placeholder='Message']" | "//button[@id='changer']" | "broken" |
 
 **Results.** To be defined...
 

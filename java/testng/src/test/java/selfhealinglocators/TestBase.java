@@ -4,7 +4,9 @@ import org.testng.annotations.DataProvider;
 
 public class TestBase 
 {
-    String baseUrl = "https://juanfonsecagl.github.io/juanfonsecaGL/selfHealingTests";
+    String site1 = "https://juanfonsecagl.github.io/juanfonsecaGL/selfHealingTests/form-button-label.html";
+    String site2 = "https://juanfonsecagl.github.io/juanfonsecaGL/selfHealingTests/form-button-label.html2";
+    String site3 = "https://juanfonsecagl.github.io/juanfonsecaGL/selfHealingTests/form-button-label.html3";
 
     @DataProvider(name = "testData")
     public Object[][] testData() {
@@ -17,10 +19,10 @@ public class TestBase
             { "http://r4d4.info/form-button-label2",    "//input[@id='messageNew']", "//button[@id='changer']", "broken" },
 
             // TestSuite #2: different placeholder for input (scenario proposed by Healenium)
-            { baseUrl+"/form-button-label.html",    "//input[@placeholder='Message']",          "//button[@id='changer']", "correct" }, 
-            { baseUrl+"/form-button-label3.html",   "//input[@placeholder='Enter some text']",  "//button[@id='changer']", "correct" },
-            { baseUrl+"/form-button-label.html",    "//input[@placeholder='Enter some text']",  "//button[@id='changer']", "broken" },  
-            { baseUrl+"/form-button-label3.html",   "//input[@placeholder='Message']",          "//button[@id='changer']", "broken" }
+            { site1,   "//input[@placeholder='Message']",          "//button[@id='changer']", "correct" }, 
+            { site3,   "//input[@placeholder='Enter some text']",  "//button[@id='changer']", "correct" },
+            { site1,   "//input[@placeholder='Enter some text']",  "//button[@id='changer']", "broken" },  
+            { site3,   "//input[@placeholder='Message']",          "//button[@id='changer']", "broken" }
         };
     }
 }
