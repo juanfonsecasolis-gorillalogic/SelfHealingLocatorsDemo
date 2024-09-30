@@ -18,5 +18,7 @@ Gorilla Logic, Sabana Business Center 10th Floor, Bv. Ernesto Rohrmoser, San Jos
 
 **Results.** To be defined...
 
+**Future work.** Find more examples or scenarios of broken locators to evaluate the implemented libraries and incorporate more libraries.
+
 ## References
 1. Herschmann, J., Murphy, T., Scheibmeir, J., O'Connor, F., & Wan, D. D. K. (2024, February 13). Market guide for AI-augmented software-testing tools (ID G00783848). Gartner.
