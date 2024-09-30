@@ -106,8 +106,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${surefire.version}</version>
-                <forkCount>0</forkCount>
                 <configuration>
+                    <forkCount>0</forkCount>
                     <suiteXmlFiles>
                         <suiteXmlFile>${config.file1}</suiteXmlFile>
                         <suiteXmlFile>${config.file2}</suiteXmlFile>
