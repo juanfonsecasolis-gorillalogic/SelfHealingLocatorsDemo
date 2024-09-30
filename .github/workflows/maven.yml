@@ -35,11 +35,6 @@ jobs:
         mv apache-maven-3.9.9 /opt/
         echo "/opt/apache-maven-3.9.9/bin" >> $GITHUB_PATH
 
-    - name: Install with Maven
-      working-directory: ./java/testng
-      run: |
-        mvn clean install -q
-
     - name: Build with Maven
       working-directory: ./java/testng
       run: |
