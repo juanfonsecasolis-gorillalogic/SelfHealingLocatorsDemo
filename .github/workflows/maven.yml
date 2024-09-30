@@ -49,8 +49,7 @@ jobs:
     - name: Docker status
       working-directory: ./java/testng
       run: |
-        docker stats
-        docker port hlm-proxy
+        docker ps -a
 
     # Chrome
     - name: Test with Maven Chrome
