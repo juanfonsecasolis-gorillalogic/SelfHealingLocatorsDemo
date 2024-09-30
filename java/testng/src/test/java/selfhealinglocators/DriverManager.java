@@ -12,8 +12,7 @@ public class DriverManager
     public static WebDriver GetWebDriver(DriverType driverType) throws Exception
     {
         @SuppressWarnings("deprecation")
-        //URL _hubUrl = new URL("http://127.0.0.1:8085/wd/hub");
-        URL _hubUrl = new URL("http://ubuntu-container:8085/wd/hub");
+        URL _hubUrl = new URL("http://127.0.0.1:8085/wd/hub");
 
         switch (driverType) {
 
