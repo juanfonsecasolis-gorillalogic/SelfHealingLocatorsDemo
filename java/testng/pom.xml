@@ -107,14 +107,12 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${surefire.version}</version>
                 <configuration>
+                    <forkMode>never</forkMode>
                     <suiteXmlFiles>
                         <suiteXmlFile>${config.file1}</suiteXmlFile>
                         <suiteXmlFile>${config.file2}</suiteXmlFile>
                         <suiteXmlFile>${config.file3}</suiteXmlFile>
                     </suiteXmlFiles>
-                    <argLine>
-                    </argLine>
-                    <reportFormat>plain</reportFormat>
                 </configuration>
             </plugin>
             <plugin>
