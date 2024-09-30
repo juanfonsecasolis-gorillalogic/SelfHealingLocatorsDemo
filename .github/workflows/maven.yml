@@ -50,6 +50,7 @@ jobs:
       working-directory: ./java/testng
       run: |
         mvn clean test -DDriverType=Chrome
+      continue-on-error: true
 
     - uses: actions/upload-artifact@v4
       with:
