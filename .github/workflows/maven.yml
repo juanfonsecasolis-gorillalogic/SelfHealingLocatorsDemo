@@ -46,14 +46,38 @@ jobs:
         compose-file: java/testng/healenium/docker-compose.yaml
       continue-on-error: false
 
-#     mvn clean test -DDriverType=Chrome    
-    - name: Test with Maven
+    # Chrome
+    - name: Test with Maven Chrome
       working-directory: ./java/testng
       run: |
-        mvn clean test
+        mvn clean test -DDriverType=Chrome
       continue-on-error: true
 
     - uses: actions/upload-artifact@v4
       with:
-        name: SureFireTestReport
+        name: Chrome-SelfHealingTestReport
+        path: ./java/testng/target/surefire-reports
+
+    # Healenium
+    - name: Test with Maven Chrome Healenium
+      working-directory: ./java/testng
+      run: |
+        mvn clean test -DDriverType=ChromeHealenium
+      continue-on-error: true
+
+    - uses: actions/upload-artifact@v4
+      with:
+        name: Healenium-SelfHealingTestReport
+        path: ./java/testng/target/surefire-reports
+  
+    # TestRigor
+    - name: Test with Maven Chrome TestRigor
+      working-directory: ./java/testng
+      run: |
+        mvn clean test -DDriverType=ChromeTestRigor
+      continue-on-error: true
+  
+    - uses: actions/upload-artifact@v4
+      with:
+        name: TestRigor-SelfHealingTestReport
         path: ./java/testng/target/surefire-reports
