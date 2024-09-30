@@ -46,6 +46,12 @@ jobs:
         compose-file: java/testng/healenium/docker-compose.yaml
       continue-on-error: false
 
+    - name: Docker status
+      working-directory: ./java/testng
+      run: |
+        docker stats
+        docker port hlm-proxy
+
     # Chrome
     - name: Test with Maven Chrome
       working-directory: ./java/testng
