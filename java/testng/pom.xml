@@ -9,7 +9,7 @@
     <packaging>jar</packaging>
 
     <properties>
-        <mavenCompilerVersion>8</mavenCompilerVersion>
+        <mavenCompilerVersion>9</mavenCompilerVersion>
         <surefire.version>2.22.0</surefire.version>
         <testng.version>LATEST</testng.version>
         <selenium.version>LATEST</selenium.version>
@@ -107,7 +107,6 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${surefire.version}</version>
                 <configuration>
-                    <forkMode>never</forkMode>
                     <suiteXmlFiles>
                         <suiteXmlFile>${config.file1}</suiteXmlFile>
                         <suiteXmlFile>${config.file2}</suiteXmlFile>
