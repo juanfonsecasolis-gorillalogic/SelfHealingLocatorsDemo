@@ -13,7 +13,7 @@ public class DriverManager
     {
         @SuppressWarnings("deprecation")
         //URL _hubUrl = new URL("http://127.0.0.1:8085/wd/hub");
-        URL _hubUrl = new URL("http://hlm-proxy:8085/wd/hub");
+        URL _hubUrl = new URL("http://ubuntu-container:8085/wd/hub");
 
         switch (driverType) {
 
