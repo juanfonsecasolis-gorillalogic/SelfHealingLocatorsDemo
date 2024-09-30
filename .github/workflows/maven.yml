@@ -35,11 +35,15 @@ jobs:
         mv apache-maven-3.9.9 /opt/
         echo "/opt/apache-maven-3.9.9/bin" >> $GITHUB_PATH
 
+    - name: Install with Maven
+      working-directory: ./java/testng
+      run: |
+        mvn clean install -q
+
     - name: Build with Maven
       working-directory: ./java/testng
       run: |
-        mvn clean install
-        mvn compile -q
+        mvn clean compile -q
 
     - name: Docker Compose with Tests Action
       uses: adambirds/docker-compose-action@v1.5.0
@@ -49,7 +53,7 @@ jobs:
 
     - name: Test with Maven
       working-directory: ./java/testng
-      run: mvn test -q
+      run: mvn clean test -q
 
     - uses: actions/upload-artifact@v4
       with:
