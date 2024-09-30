@@ -4,9 +4,9 @@ import org.testng.annotations.DataProvider;
 
 public class TestBase 
 {
-    String site1 = "https://juanfonsecagl.github.io/juanfonsecaGL/selfHealingTests/form-button-label.html";
-    String site2 = "https://juanfonsecagl.github.io/juanfonsecaGL/selfHealingTests/form-button-label.html2";
-    String site3 = "https://juanfonsecagl.github.io/juanfonsecaGL/selfHealingTests/form-button-label.html3";
+    String site1 = "https://juanfonsecagl.github.io/SelfHealingLocatorsDemo/demoSite/form-button-label.html";
+    String site2 = "https://juanfonsecagl.github.io/SelfHealingLocatorsDemo/demoSite/form-button-label2.html";
+    String site3 = "https://juanfonsecagl.github.io/SelfHealingLocatorsDemo/demoSite/form-button-label3.html";
 
     @DataProvider(name = "testData")
     public Object[][] testData() {

@@ -1,6 +1,7 @@
 # Self-healing locators
 
-Juan M. Fonseca Solís</br>
+Juan M. Fonseca Solís
+
 Gorilla Logic, Sabana Business Center 10th Floor, Bv. Ernesto Rohrmoser, San José.
 
 <img width="250" height="100" src='img/GL_Logo_Primary_Blk.png'/>
@@ -15,11 +16,12 @@ Gorilla Logic, Sabana Business Center 10th Floor, Bv. Ernesto Rohrmoser, San Jos
 
 | Page | Input box | Button |
 | --- | --- | --- |
-| [Site #1](selfHealingTests/form-button-label.html)  | `\\input[@placeholder="Message"]`           | `\\button[@id='changer']` |
-| [Site #2](selfHealingTests/form-button-label2.html) | `\\input[@placeholder="Message"]`           | `\\a[@id='pusher']` |
-| [Site #3](selfHealingTests/form-button-label3.html) | `\\input[@placeholder="Enter some text"]`   | `\\button[@id='changer']` | 
+| [Site #1](demoSite/form-button-label.html)  | `\\input[@placeholder="Message"]`           | `\\button[@id='changer']` |
+| [Site #2](demoSite/form-button-label2.html) | `\\input[@placeholder="Message"]`           | `\\a[@id='pusher']` |
+| [Site #3](demoSite/form-button-label3.html) | `\\input[@placeholder="Enter some text"]`   | `\\button[@id='changer']` | 
 
 Test cases:
+
 | TC | Site | Locator 1 | Locator 2 | Type |
 | --- | --- | --- | --- | --- |
 | TC5 | Site1 | "//input[@placeholder='Message']" | "//button[@id='changer']" | "correct" |
