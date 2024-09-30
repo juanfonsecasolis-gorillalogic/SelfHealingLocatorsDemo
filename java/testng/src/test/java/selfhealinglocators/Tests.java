@@ -17,7 +17,7 @@ public class Tests extends TestBase
     By _textMessageLocator = By.xpath("//p[1] | //*[@id='displayMessage']");
 
     @BeforeMethod()
-    @Parameters({ "driverType" })
+    @Parameters({ "DriverType" })
     public void setUp(DriverType driverType) throws Exception
     {
         _driver = DriverManager.GetWebDriver(driverType);

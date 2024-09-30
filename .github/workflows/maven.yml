@@ -48,7 +48,8 @@ jobs:
 
     - name: Test with Maven
       working-directory: ./java/testng
-      run: mvn clean test -q
+      run: |
+        mvn clean test -DDriverType=Chrome
 
     - uses: actions/upload-artifact@v4
       with:
