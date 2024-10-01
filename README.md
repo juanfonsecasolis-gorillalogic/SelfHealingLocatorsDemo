@@ -14,18 +14,18 @@ Gorilla Logic, Sabana Business Center 10th Floor, Bv. Ernesto Rohrmoser, San Jos
 
 **Theory.**  For DotNet we found that the library Selenium.WebDriver.SelfHealing is the only available NuGet package in the official repositories and that it offers self-healing capabilities with a privative license (it allows a monthly quota for free). For Java, TestRigor and Healenium were available solutions, the first one with a privative license (with a fifteen days trial) whereas Healenium is free [2, 3]. Only Healenium offered an explanation of its internal functioning.
 
-**Method.** We evaluated all implementations against the test cases of table 1 and sites of table 2. For DotNet we implemented as sample project using the Selenium/nUnit combo. For Java, we implemented a project using Maven/TestNg/Selenium and executed the tests in Healenium's docker containers [2, 3].
+**Method.** We evaluated all libraries using the same test procedure, which is entering a value in an input field and confirming that value was displayed in a label after the user pressed a button; the test cases of table 1 consisted in a combination of locators that could be "valid" or "broken" depending on the site implementation (table 2). The expectation was that the self-healing libraries could heal the locators after presenting the valid examples. For DotNet we implemented as sample project using the Selenium/nUnit combo. For Java, we implemented a project using Maven/TestNg/Selenium and executed the tests in Healenium's docker containers [2, 3].
 
 Table 1. Test cases.
 
 | TC | Proposed by | Site | Locator 1 | Locator 2 | Locator Configuration |
 | --- | --- | --- | --- | --- | --- |
-| TC1 | TestRigor | Site #1 | //input[@id='messageNew'] | //button[@id='changer'] | correct |
-| TC2 | TestRigor | Site #2 | //input[@id='messageNew'] | //a[@id='pusher'] | correct |
+| TC1 | TestRigor | Site #1 | //input[@id='messageNew'] | //button[@id='changer'] | valid |
+| TC2 | TestRigor | Site #2 | //input[@id='messageNew'] | //a[@id='pusher'] | valid |
 | TC3 | TestRigor | Site #1 | //input[@id='messageNew'] | //a[@id='pusher'] | broken |
 | TC4 | TestRigor | Site #2 | //input[@id='messageNew'] | //button[@id='changer'] | broken |
-| TC5 | Healenium | Site #1 | //input[@placeholder='Message'] | //button[@id='changer'] | correct |
-| TC6 | Healenium | Site #3 | //input[@placeholder='Enter some text'] | //button[@id='changer'] | correct |
+| TC5 | Healenium | Site #1 | //input[@placeholder='Message'] | //button[@id='changer'] | valid |
+| TC6 | Healenium | Site #3 | //input[@placeholder='Enter some text'] | //button[@id='changer'] | valid |
 | TC7 | Healenium | Site #1 | //input[@placeholder='Enter some text'] | //button[@id='changer'] | broken | 
 | TC8 | Healenium | Site #3 | //input[@placeholder='Message'] | //button[@id='changer'] | broken |
 
