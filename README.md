@@ -14,7 +14,7 @@ Gorilla Logic, Sabana Business Center 10th Floor, Bv. Ernesto Rohrmoser, San Jos
 
 **Theory.**  For DotNet we found that the library Selenium.WebDriver.SelfHealing is the only available NuGet package in the official repositories and that it offers self-healing capabilities with a privative license (it allows a monthly quota for free). For Java, TestRigor and Healenium were available solutions, the first one with a privative license (with a fifteen days trial) whereas Healenium is free [2, 3]. Only Healenium offered an explanation of its internal functioning.
 
-**Method.** We evaluated all implementations against the test cases of table 1 and sites of table 2. For DotNet we implemented as sample project using the Selenium/nUnit combo. For Java, we implemented a project using Maven/TestNg/Selenium and run the tests in Healenium's docker containers [2, 3].
+**Method.** We evaluated all implementations against the test cases of table 1 and sites of table 2. For DotNet we implemented as sample project using the Selenium/nUnit combo. For Java, we implemented a project using Maven/TestNg/Selenium and executed the tests in Healenium's docker containers [2, 3].
 
 Table 1. Test cases.
 
