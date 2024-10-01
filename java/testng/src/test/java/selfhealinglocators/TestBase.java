@@ -13,16 +13,16 @@ public class TestBase
         return new Object[][] 
         {
             // TestSuite #1: different button implementation (scenario proposed by Test Rigor)
-            { "http://r4d4.info/form-button-label",     "//input[@id='messageNew']", "//button[@id='changer']", "correct" },    // TC1
-            { "http://r4d4.info/form-button-label2",    "//input[@id='messageNew']", "//a[@id='pusher']",       "correct" },    // TC2
-            { "http://r4d4.info/form-button-label",     "//input[@id='messageNew']", "//a[@id='pusher']",       "broken" },
-            { "http://r4d4.info/form-button-label2",    "//input[@id='messageNew']", "//button[@id='changer']", "broken" },
+            { site1,    "//input[@id='messageNew']",                "//button[@id='changer']",  "correct" },    // TC1
+            { site2,    "//input[@id='messageNew']",                "//a[@id='pusher']",        "correct" },    // TC2
+            { site1,    "//input[@id='messageNew']",                "//a[@id='pusher']",        "broken" },     // TC3
+            { site2,    "//input[@id='messageNew']",                "//button[@id='changer']",  "broken" },     // TC4
 
             // TestSuite #2: different placeholder for input (scenario proposed by Healenium)
-            { site1,   "//input[@placeholder='Message']",          "//button[@id='changer']", "correct" }, 
-            { site3,   "//input[@placeholder='Enter some text']",  "//button[@id='changer']", "correct" },
-            { site1,   "//input[@placeholder='Enter some text']",  "//button[@id='changer']", "broken" },  
-            { site3,   "//input[@placeholder='Message']",          "//button[@id='changer']", "broken" }
+            { site1,   "//input[@placeholder='Message']",          "//button[@id='changer']",   "correct" },    // TC5
+            { site3,   "//input[@placeholder='Enter some text']",  "//button[@id='changer']",   "correct" },    // TC6
+            { site1,   "//input[@placeholder='Enter some text']",  "//button[@id='changer']",   "broken" },     // TC7
+            { site3,   "//input[@placeholder='Message']",          "//button[@id='changer']",   "broken" }      // TC8
         };
     }
 }

@@ -12,7 +12,24 @@ Gorilla Logic, Sabana Business Center 10th Floor, Bv. Ernesto Rohrmoser, San Jos
 
 **Importance.** Self-healing drivers can reduce automation maintenance costs by automatically detecting changes in the web page layout and updating locators to ensure the test cases are functional [1].
 
-**Method.** For DotNet we implemented a sample project using Selenium.WebDriver.SelfHealing (the only available package in the NuGet repositories), and for Java we implemented a project that uses TestRigor and Healenium [2, 3]. We evaluated all implementations against the sites below:
+**Theory.**  For DotNet we found that the library Selenium.WebDriver.SelfHealing is the only available NuGet package in the official repositories and that it offers self-healing capabilities with a privative license (it allows a monthly quota for free). For Java, TestRigor and Healenium were available solutions, the first one with a privative license (with a fifteen days trial) whereas Healenium is free [2, 3]. Only Healenium offered an explanation of its internal functioning.
+
+**Method.** We evaluated all implementations against the test cases of table 1 and sites of table 2. For DotNet we implemented as sample project using the Selenium/nUnit combo. For Java, we implemented a project using Maven/TestNg/Selenium and run the tests in Healenium's docker containers [2, 3].
+
+Table 1. Test cases.
+
+| TC | Proposed by | Site | Locator 1 | Locator 2 | Locator Configuration |
+| --- | --- | --- | --- | --- | --- |
+| TC1 | TestRigor [3] | Site #1 | //input[@id='messageNew'] | //button[@id='changer'] | correct |
+| TC2 | TestRigor [3] | Site #2 | //input[@id='messageNew'] | //a[@id='pusher'] | correct |
+| TC3 | TestRigor [3] | Site #1 | //input[@id='messageNew'] | //a[@id='pusher'] | broken |
+| TC4 | TestRigor [3] | Site #2 | //input[@id='messageNew'] | //button[@id='changer'] | broken |
+| TC5 | Healenium [4] | Site #1 | //input[@placeholder='Message'] | //button[@id='changer'] | correct |
+| TC6 | Healenium [4] | Site #3 | //input[@placeholder='Enter some text'] | //button[@id='changer'] | correct |
+| TC7 | Healenium [4] | Site #1 | //input[@placeholder='Enter some text'] | //button[@id='changer'] | broken | 
+| TC8 | Healenium [4] | Site #3 | //input[@placeholder='Message'] | //button[@id='changer'] | broken |
+
+Table 2. Site configuration.
 
 | Page | Input box | Button |
 | --- | --- | --- |
@@ -20,30 +37,50 @@ Gorilla Logic, Sabana Business Center 10th Floor, Bv. Ernesto Rohrmoser, San Jos
 | [Site #2](demoSite/form-button-label2.html) | `\\input[@placeholder="Message"]`           | `\\a[@id='pusher']` |
 | [Site #3](demoSite/form-button-label3.html) | `\\input[@placeholder="Enter some text"]`   | `\\button[@id='changer']` | 
 
-Test cases:
+**Results.** As shown by table 3, Healenium was the only solution that worked solving the self-proposed scenarios. 
 
-| TC | Site | Locator 1 | Locator 2 | Type |
-| --- | --- | --- | --- | --- |
-| TC5 | Site1 | "//input[@placeholder='Message']" | "//button[@id='changer']" | "correct" |
-| TC6 | Site3 | "//input[@placeholder='Enter some text']" | "//button[@id='changer']" | "correct" |
-| TC7 | Site1 | "//input[@placeholder='Enter some text']" | "//button[@id='changer']" | "broken" | 
-| TC8 | Site3 | "//input[@placeholder='Message']" | "//button[@id='changer']" | "broken" |
+Table 3. Results. 
 
-**Results.** To be defined...
+| TC | Passed | Failed |
+| --- | --- | --- |
+| TC1 | NoSelfHealing, Healenium | TestRigor |
+| TC2 | NoSelfHealing, Healenium | TestRigor |
+| TC3 | - | NoSelfHealing, Healenium, TestRigor |
+| TC4 | - | NoSelfHealing, Healenium, TestRigor |
+| TC5 | NoSelfHealing, Healenium | TestRigor |
+| TC6 | NoSelfHealing, Healenium | TestRigor |
+| TC7 | Healenium | NoSelfHealing, TestRigor |
+| TC8 | Healenium | NoSelfHealing, TestRigor |
 
-**Future work.** Find more examples or scenarios of broken locators to evaluate the implemented libraries and incorporate more libraries.
+**Future work.** 
+1. Find more scenarios of broken locators to evaluate the implemented libraries.
+2. Incorporate more libraries.
+3. For the Healenium case, evaluate the proposed test cases at the database level and explain the internal work.
 
-## Recreate the results
-1. Start the Docker containers using Docker Desktop (or if running the first time, `cd healenium; docker-compose up -d;`).
-2. Execute the desired suites: 
+## Reproducibe results
+
+Please follow the steps below to reproduce the results obtained:
+1. If running for the first time, run `cd healenium; docker-compose up -d;`, otherwise start the Healenium's containers using Docker Desktop.
+2. Execute the non-self-healing suite `mvn clean test -DDriverType=Chrome`.
+3. Copy test report at target/surefire-reports/index.html to a folder named Chrome.
+4. Repeat steps 2-3 with the other suites:
 ```
-mvn clean test -DDriverType=Chrome
 mvn clean test -DDriverType=ChromeHealenium
 mvn clean test -DDriverType=ChromeTestRigor
 ```
-3. The test report can be found in target/surefire-reports/index.html.
+
+**Note:** This solution also comes with a YAML file that runs in Github Actions.
+
+### Image versions for Healenium:
+* healenium/hlm-backend:3.4.5          
+* selenium/node-chrome:latest (Google Chrome 128.0.6613.119)      
+* healenium/hlm-proxy:2.0.0            
+* healenium/hlm-selector-imitator:1.4  
+* selenium/hub:latest                  
+* postgres:15.5-alpine   
 
 ## References
 1. Herschmann, J., Murphy, T., Scheibmeir, J., O'Connor, F., & Wan, D. D. K. (2024, February 13). Market guide for AI-augmented software-testing tools (ID G00783848). Gartner.
-2. Anton Angelov. Healenium: Self-Healing Library for Selenium-based Automated Tests. Automate the Planet. URL: https://www.automatetheplanet.com/healenium-self-healing-tests/ (last consulted on 09/12/2024)
-3. TestRigor. Selenium self-healing. URL: https://testrigor.com/selenium-self-healing/ (09/30/24)
+2. Anton Angelov. [Healenium: Self-Healing Library for Selenium-based Automated Tests](https://www.automatetheplanet.com/healenium-self-healing-tests/). Automate the Planet (last consulted on 09/12/2024).
+3. TestRigor. [Selenium self-healing](https://testrigor.com/selenium-self-healing) (last consulted on 09/30/24).
+4. Hungarian Testing Board - Magyar Szoftvertesztelői Tanács Egyesület. [Stabilization of E2E tests with Healenium](https://www.youtube.com/live/ttuZkpCOt3g?si=UYtog10_U-fsAae_&t=1566). YouTube (last consulted on 10/01/24).
