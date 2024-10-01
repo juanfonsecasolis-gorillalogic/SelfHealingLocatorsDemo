@@ -57,7 +57,7 @@ Table 3. Results.
 **Future work.** 
 1. Find more scenarios of broken locators to evaluate the implemented libraries.
 2. Incorporate more libraries.
-3. For the Healenium case, evaluate the proposed test cases at the database level and explain the internal work.
+3. For the Healenium case, evaluate the proposed test cases at the database level and explain the internal functioning.
 
 ## Reproducibe results
 
