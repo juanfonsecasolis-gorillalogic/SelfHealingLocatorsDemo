@@ -16,7 +16,7 @@ Gorilla Logic, Sabana Business Center 10th Floor, Bv. Ernesto Rohrmoser, San Jos
 
 **Method.** We evaluated all libraries using the same test procedure, which is entering a value in an input field and confirming that value was displayed in a label after the user pressed a button. The test cases of table 1 consisted in a combination of locators that could be "valid" or "broken" depending on the site implementation (table 2). The expectation was that the self-healing libraries could heal the locators after presenting the valid examples. 
 
-For DotNet we implemented as sample project using the Selenium/nUnit combo, and for Java, we implemented a project using Maven/TestNg/Selenium and executed the tests in Healenium's docker containers [2, 3].
+For DotNet we implemented a project using the Selenium/nUnit combo, and for Java, we implemented a project using Maven/TestNg/Selenium. The test cases were executed the tests in Healenium's docker containers [2, 3].
 
 Table 1. Test cases.
 
