@@ -20,14 +20,14 @@ Table 1. Test cases.
 
 | TC | Proposed by | Site | Locator 1 | Locator 2 | Locator Configuration |
 | --- | --- | --- | --- | --- | --- |
-| TC1 | TestRigor [3] | Site #1 | //input[@id='messageNew'] | //button[@id='changer'] | correct |
-| TC2 | TestRigor [3] | Site #2 | //input[@id='messageNew'] | //a[@id='pusher'] | correct |
-| TC3 | TestRigor [3] | Site #1 | //input[@id='messageNew'] | //a[@id='pusher'] | broken |
-| TC4 | TestRigor [3] | Site #2 | //input[@id='messageNew'] | //button[@id='changer'] | broken |
-| TC5 | Healenium [4] | Site #1 | //input[@placeholder='Message'] | //button[@id='changer'] | correct |
-| TC6 | Healenium [4] | Site #3 | //input[@placeholder='Enter some text'] | //button[@id='changer'] | correct |
-| TC7 | Healenium [4] | Site #1 | //input[@placeholder='Enter some text'] | //button[@id='changer'] | broken | 
-| TC8 | Healenium [4] | Site #3 | //input[@placeholder='Message'] | //button[@id='changer'] | broken |
+| TC1 | TestRigor | Site #1 | //input[@id='messageNew'] | //button[@id='changer'] | correct |
+| TC2 | TestRigor | Site #2 | //input[@id='messageNew'] | //a[@id='pusher'] | correct |
+| TC3 | TestRigor | Site #1 | //input[@id='messageNew'] | //a[@id='pusher'] | broken |
+| TC4 | TestRigor | Site #2 | //input[@id='messageNew'] | //button[@id='changer'] | broken |
+| TC5 | Healenium | Site #1 | //input[@placeholder='Message'] | //button[@id='changer'] | correct |
+| TC6 | Healenium | Site #3 | //input[@placeholder='Enter some text'] | //button[@id='changer'] | correct |
+| TC7 | Healenium | Site #1 | //input[@placeholder='Enter some text'] | //button[@id='changer'] | broken | 
+| TC8 | Healenium | Site #3 | //input[@placeholder='Message'] | //button[@id='changer'] | broken |
 
 Table 2. Site configuration.
 
