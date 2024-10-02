@@ -54,6 +54,17 @@ Table 3. Results.
 | TC7 | Healenium | NoSelfHealing, TestRigor |
 | TC8 | Healenium | NoSelfHealing, TestRigor |
 
+| TC | NoSelfHealing | TestRigor | Healenium | DotNet SelfHealing | 
+| --- | --- | --- | --- | --- |
+| TC1 | ✓ | x | ✓ | - |
+| TC2 | ✓ | x | ✓ | - |
+| TC3 | x | x | x | - |
+| TC4 | x | x | x | - |
+| TC5 | ✓ | x | ✓ | - |
+| TC6 | ✓ | x | ✓ | - |
+| TC7 | x | x | ✓ | - |
+| TC8 | x | x | ✓ | - |
+
 **Future work.** 
 1. Find more scenarios of broken locators to evaluate the implemented libraries.
 2. Incorporate more libraries.
