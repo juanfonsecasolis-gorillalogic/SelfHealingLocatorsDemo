@@ -34,12 +34,7 @@ Disadvantages:
 * The [quota page](deliveryassured.com.au/selenium.webdriver.selfhealing) is broken.
 * It is not mentioned where the "innovative self-healing algorithm" is used and if it uses Artificial Intelligence.
 
-## Selenium.WebDriver.SelfHealing [4, 5]
-TBD...
-
 # References
 1. Courtney Zhan. Set up and Run Selenium C# Tests in Visual Studio Code on macOS. Medium, Apr 2, 2023. URL: https://courtneyzhan.medium.com/set-up-and-run-selenium-c-tests-in-visual-studio-code-on-macos-179ee9f4a46e (last consulted on 09/05/2024)
 2. Marcus Hammarberg. Writing a Selenium test using .NET core and Visual Studio Code. MarcuSoft blog, Oct 7th 2021. URL: https://www.marcusoft.net/2021/10/setting-up-selenium-web-automation-with-net-core.html (last consulted on 09/05/2024)
 3. Craig Richards. Selenium.WebDriver.SelfHealing. NuGet gallery, Microsoft. URL: https://www.nuget.org/packages/Selenium.WebDriver.SelfHealing/0.99.21-beta.1 (last consulted on 09/05/2024)
-4. Test Rigor. Selenium self-healing. URL: https://testrigor.com/selenium-self-healing/ (last consulted on 09/05/2024)
-5. Test Rigor. Self-healing-selenium. URL: https://github.com/TestRigor/Self-healing-selenium (last consulted on 09/05/2024)
