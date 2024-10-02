@@ -43,17 +43,6 @@ Table 2. Site configuration.
 
 Table 3. Results. 
 
-| TC | Passed | Failed |
-| --- | --- | --- |
-| TC1 | NoSelfHealing, Healenium | TestRigor |
-| TC2 | NoSelfHealing, Healenium | TestRigor |
-| TC3 | - | NoSelfHealing, Healenium, TestRigor |
-| TC4 | - | NoSelfHealing, Healenium, TestRigor |
-| TC5 | NoSelfHealing, Healenium | TestRigor |
-| TC6 | NoSelfHealing, Healenium | TestRigor |
-| TC7 | Healenium | NoSelfHealing, TestRigor |
-| TC8 | Healenium | NoSelfHealing, TestRigor |
-
 | TC | NoSelfHealing | TestRigor | Healenium | DotNet SelfHealing | 
 | --- | --- | --- | --- | --- |
 | TC1 | ✓ | x | ✓ | - |
