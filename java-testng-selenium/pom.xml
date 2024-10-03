@@ -12,7 +12,8 @@
         <mavenCompilerVersion>9</mavenCompilerVersion>
         <surefire.version>2.22.0</surefire.version>
         <testng.version>LATEST</testng.version>
-        <selenium.version>LATEST</selenium.version>
+        <selenium.version>4.25.0</selenium.version>
+        <!--selenium.version>3.9.0</selenium.version-->
         <healenium.version>LATEST</healenium.version>
         <selenium.remoteDriver.version>LATEST</selenium.remoteDriver.version>
         <testRigor.version>0.1.1-SNAPSHOT</testRigor.version>
@@ -22,16 +23,12 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <!--distributionManagement>
-		<snapshotRepository>
-			<id>ossrh</id>
-			<url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
-		</snapshotRepository>
-		<repository>
-			<id>ossrh</id>
-			<url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-		</repository>
-	</distributionManagement-->
+    <repositories>
+        <repository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+        </repository>
+    </repositories>
 
     <dependencies>
         <dependency>
@@ -39,18 +36,30 @@
             <artifactId>selenium-remote-driver</artifactId>
             <version>${selenium.remoteDriver.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium.version}</version>
+        </dependency>
         <!--dependency>
-            <groupId>com.testrigor</groupId>
-            <artifactId>self-healing-selenium-3</artifactId>
-            <version>0.1.0</version>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-chrome-driver</artifactId>
+            <version>4.5.3</version>
         </dependency-->
         <dependency>
             <groupId>com.testrigor</groupId>
             <artifactId>self-healing-selenium-4</artifactId>
-            <version>0.1.1-SNAPSHOT </version>
+            <version>0.1.1-SNAPSHOT</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/src/test/resources/self-healing-selenium-4-0.1.1-20230125.221122-2.jar</systemPath>
         </dependency>
+        <!--dependency>
+            <groupId>com.testrigor</groupId>
+            <artifactId>self-healing-selenium-3</artifactId>
+            <version>0.1.1-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/test/resources/self-healing-selenium-3-0.1.1-20230125.221109-2.jar</systemPath>
+        </dependency-->
         <dependency>
             <groupId>com.google.inject</groupId>
             <artifactId>guice</artifactId>
@@ -65,11 +74,6 @@
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>${testng.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>${selenium.version}</version>
         </dependency>
         <dependency>
             <groupId>io.github.bonigarcia</groupId>

@@ -6,7 +6,7 @@
       <class name="selfhealinglocators.Tests">
         <methods>
           <include name="setUp"/>
-          <include name="FormTest" invocation-numbers="2 3"/>
+          <include name="FormTest"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- selfhealinglocators.Tests -->

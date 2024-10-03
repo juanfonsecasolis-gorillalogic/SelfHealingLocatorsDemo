@@ -8,7 +8,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import com.testrigor.selfhealingselenium.application.SelfHealingDriver;
+import com.testrigor.selfhealingselenium.*;
 
 public class Tests extends TestBase
 {
@@ -34,10 +34,10 @@ public class Tests extends TestBase
         // arrange
         String expectedMessage = "Testing 123";
         _driver.navigate().to(url);
-        if(_driverType==DriverType.ChromeTestRigor)
+        /*if(_driverType==DriverType.ChromeTestRigor)
         {
             ((SelfHealingDriver) _driver).setTestCaseName("test");
-        }
+        }*/
         
         // act
         WebElement inputElement = _driver.findElement(By.xpath(inputTextLocator));

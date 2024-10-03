@@ -2,10 +2,10 @@ package selfhealinglocators;
 
 import org.apache.commons.lang3.NotImplementedException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.chrome.*;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import com.testrigor.selfhealingselenium.TestRigor;
 import java.net.URL;
+import com.testrigor.selfhealingselenium.*;
 
 public class DriverManager
 {
@@ -20,7 +20,8 @@ public class DriverManager
                 ChromeOptions options0 = new ChromeOptions();
                 options0.addArguments("--remote-allow-origins=*"); 
                 options0.addArguments("--headless=true"); 
-                return new RemoteWebDriver(_hubUrl, options0);
+                //return new RemoteWebDriver(_hubUrl, options0);
+                return new ChromeDriver(options0);
 
             case ChromeHealenium:
                 ChromeOptions options1 = new ChromeOptions();
@@ -34,8 +35,8 @@ public class DriverManager
                 options2.addArguments("--remote-allow-origins=*");
                 options2.addArguments("--headless=true");  
                 WebDriver selfHealDriver = TestRigor.selfHeal(
-                    //new ChromeDriver(options2),
-                    new RemoteWebDriver(_hubUrl, options2),
+                    new ChromeDriver(options2),
+                    //new RemoteWebDriver(_hubUrl, options2),
                     "o2iI0g54YEfCYq5WAMp2oRop3ox9laQWZdGoKFjeyxqOmv6LmyTm"
                 );
                 return selfHealDriver;
