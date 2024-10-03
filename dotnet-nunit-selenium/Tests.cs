@@ -24,7 +24,7 @@ public class Tests : TestBase
     }
 
     [TestCaseSource(nameof(TestData))]
-    public void FormTest(string url, string inputTextLocator, string updateButtonLocator, string classification)
+    public void FormTest(string testCaseId, string url, string inputTextLocator, string updateButtonLocator, string classification)
     {
         // arrange
         string expectedMessage = "Testing 123";
@@ -40,5 +40,8 @@ public class Tests : TestBase
         // assert
         string currentMessage = _driver.FindElement(textMessageLocator).Text;
         Assert.That(currentMessage.Contains(expectedMessage));
+        TestContext.WriteLine("---------------------------------");
+        TestContext.WriteLine($"{testCaseId} PASSED.");
+        TestContext.WriteLine("---------------------------------");
     }
 }
