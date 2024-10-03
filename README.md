@@ -12,11 +12,9 @@ Gorilla Logic, Sabana Business Center 10th Floor, Bv. Ernesto Rohrmoser, San Jos
 
 **Importance.** Self-healing drivers can reduce automation maintenance costs by automatically detecting changes in the web page layout and updating locators to ensure the test cases are functional [1].
 
-**Theory.**  For DotNet we found that the library Selenium.WebDriver.SelfHealing is the only available NuGet package in the official repositories and that it offers self-healing capabilities with a privative license (it allows a monthly quota for free). For Java, TestRigor and Healenium were available solutions, the first one with a privative license (with a fifteen days trial) whereas Healenium is free [2, 3]. Only Healenium offered an explanation of its internal functioning, and apparently, only Healenium and TestRigor use Artificial Intelligence.
+**Theory.** Selenium.WebDriver.SelfHealing is the only available library for DotNet in the NuGet repository, and Healenium and TestRigor are libraries only available for Java. Selenium.WebDriver.SelfHealing offers a free monthly quota, Healenium is free without limit, and TestRigor is privative with a fifteen days trial [2, 3]. Only Healenium and TestRigor mentions the use of Artificial Intelligence.
 
-**Method.** We evaluated all libraries using the same test procedure, which is entering a value in an input field and confirming that value was displayed in a label after the user pressed a button. The test cases of table 1 consisted in a combination of locators that could be "valid" or "broken" depending on the site implementation (table 2). The expectation was that the self-healing libraries could heal the locators after presenting the valid examples. 
-
-For DotNet we implemented a project using the Selenium/nUnit combo, and for Java, we implemented a project using Maven/TestNg/Selenium. The test cases were executed in Healenium's docker hub container [2, 3].
+**Method.** We evaluated all libraries using the following test procedure: users opens a web form, enters a value in an input field, pressed a button to submit the form, and confirms that value is displayed in a label. The test procedure was executed against the combination of locators specified in table 1 (test cases) using the web site implementation listed in table 2. The test procedure was implemented for DotNet using Selenium/nUnit combo, and for Java using Maven/TestNg/Selenium. The test cases were executed in Healenium's docker hub container to avoid conflicts with the Driver version [2, 3].
 
 Table 1. Test cases.
 
@@ -39,7 +37,7 @@ Table 2. Site configuration.
 | [Site #2](demo-site/form-button-label2.html) | `\\input[@placeholder="Message"]`           | `\\a[@id='pusher']` |
 | [Site #3](demo-site/form-button-label3.html) | `\\input[@placeholder="Enter some text"]`   | `\\button[@id='changer']` | 
 
-**Results.** As shown by table 3, Healenium was the only solution that worked solving the self-proposed scenarios. 
+**Results.** As shown by table 3, Healenium is the solution with the highest passrate and the only one that passed their own scenarios. 
 
 Table 3. Results. 
 
@@ -53,6 +51,7 @@ Table 3. Results.
 | TC6 | ✓ | x | ✓ | ✓ |
 | TC7 | x | x | ✓ | x |
 | TC8 | x | x | ✓ | x |
+| Pass rate | .5 | .0 | .75 | .5 |
 
 **Future work.** 
 1. Find more scenarios of broken locators to evaluate the implemented libraries.
