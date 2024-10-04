@@ -34,12 +34,9 @@ jobs:
     - uses: actions/upload-artifact@v4
       with:
         name: DotNet-SelfHealingTestReport
-        path: dotnet-nunit-selenium/TestResults
-        
-    - uses: actions/upload-artifact@v4
-      with:
-        name: DotNet-SelfHealingTestReport
-        path: dotnet-nunit-selenium/bin/Debug/net8.0/TestResultsSummary.txt
+        path: |
+          dotnet-nunit-selenium/TestResults
+          dotnet-nunit-selenium/bin/Debug/net8.0/TestResultsSummary.txt
 
   ##########################################
   # Java Set up
