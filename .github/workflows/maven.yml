@@ -36,7 +36,7 @@ jobs:
         echo "/opt/apache-maven-3.9.9/bin" >> $GITHUB_PATH
 
     - name: Preview
-      working-directory: java/testng
+      working-directory: ../java/testng
       run: |
         pwd 
         ls
