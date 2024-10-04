@@ -22,6 +22,28 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+  ##########################################
+  # DotNet Set up
+  ##########################################
+    - name: Test DotNet project
+      working-directory: dotnet-nunit-selenium
+      run: |
+        dotnet test SelfHealingLocatorsDemo.csproj -l:trx;
+      continue-on-error: true
+
+    - uses: actions/upload-artifact@v4
+      with:
+        name: DotNet-SelfHealingTestReport
+        path: dotnet-nunit-selenium/TestResults
+        
+    - uses: actions/upload-artifact@v4
+      with:
+        name: DotNet-SelfHealingTestReport
+        path: dotnet-nunit-selenium/bin/Debug/net8.0/TestResultsSummary.txt
+
+  ##########################################
+  # Java Set up
+  ##########################################
     - name: Setup Java JDK
       uses: actions/setup-java@v4.4.0
       with:
@@ -51,11 +73,9 @@ jobs:
       run: |
         docker ps -a
 
-  #chrome:
-  #  needs: build
-  #  runs-on: ubuntu-latest
-  #  steps:
-
+  ##########################################
+  # Chrome
+  ##########################################
     - name: Test with Maven Chrome
       working-directory: java-testng-selenium
       run: |
@@ -67,11 +87,9 @@ jobs:
         name: Chrome-SelfHealingTestReport
         path: java-testng-selenium/target/surefire-reports
 
-  #healenium:
-  #  needs: build
-  #  runs-on: ubuntu-latest
-  #  steps:
-
+  ##########################################
+  # Healenium
+  ##########################################
     - name: Test with Maven Chrome Healenium
       working-directory: java-testng-selenium
       run: |
@@ -83,11 +101,9 @@ jobs:
         name: Healenium-SelfHealingTestReport
         path: java-testng-selenium/target/surefire-reports
   
-  #testRigor:
-  #  needs: build
-  #  runs-on: ubuntu-latest
-  #  steps:
-
+  ##########################################
+  # TestRigor
+  ##########################################
     - name: Test with Maven Chrome TestRigor
       working-directory: java-testng-selenium
       run: |

@@ -1,12 +1,14 @@
 using Selenium.WebDriver.SelfHealing;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using NUnit.Framework.Internal;
 
 namespace SelfHealingLocatorsDemo;
 
 public class Tests : TestBase
 {
     ISelfHealingWebDriver _driver;
+    string _testCaseId;
 
     [SetUp]
     public void Setup()
@@ -14,6 +16,7 @@ public class Tests : TestBase
         var options = new ChromeOptions();
         var delegateDriver = new ChromeDriver(options);
         _driver = delegateDriver.ToSelfHealingDriver();
+        _testPassed = false;
     }
 
     [TearDown]
@@ -21,12 +24,15 @@ public class Tests : TestBase
     {
         _driver.Close();
         _driver.Quit();
+        string outcome = _testPassed==true? "PASSED" : "FAILED";
+        File.AppendAllText(_reportFilePath, $"{_testCaseId} - { outcome }\n");
     }
 
     [TestCaseSource(nameof(TestData))]
     public void FormTest(string testCaseId, string url, string inputTextLocator, string updateButtonLocator, string classification)
     {
         // arrange
+        _testCaseId = testCaseId;
         string expectedMessage = "Testing 123";
         By textMessageLocator = By.XPath("//p[1] | //*[@id='displayMessage']");
         _driver.Navigate().GoToUrl(url);
@@ -39,9 +45,8 @@ public class Tests : TestBase
 
         // assert
         string currentMessage = _driver.FindElement(textMessageLocator).Text;
+
         Assert.That(currentMessage.Contains(expectedMessage));
-        TestContext.WriteLine("---------------------------------");
-        TestContext.WriteLine($"{testCaseId} PASSED.");
-        TestContext.WriteLine("---------------------------------");
+        _testPassed = true;
     }
 }

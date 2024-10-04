@@ -12,7 +12,7 @@ dotnet add package Selenium.WebDriver.SelfHealing --version 0.99.21-beta.1
 
 # Execution
 ```
-dotnet test SelfHealingLocatorsDemo.csproj
+dotnet test SelfHealingLocatorsDemo.csproj -l:trx;
 ```
 
 # Tools
