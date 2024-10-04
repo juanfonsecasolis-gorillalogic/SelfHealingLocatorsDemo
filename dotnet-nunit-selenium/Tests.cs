@@ -1,7 +1,6 @@
 using Selenium.WebDriver.SelfHealing;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using NUnit.Framework.Internal;
 
 namespace SelfHealingLocatorsDemo;
 
@@ -14,8 +13,8 @@ public class Tests : TestBase
     public void Setup()
     {
         var options = new ChromeOptions();
-        var delegateDriver = new ChromeDriver(options);
-        _driver = delegateDriver.ToSelfHealingDriver();
+        options.AddArgument("--headless=true");
+        _driver = new ChromeDriver(options).ToSelfHealingDriver();
         _testPassed = false;
     }
 
