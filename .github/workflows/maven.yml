@@ -52,6 +52,7 @@ jobs:
         docker ps -a
 
   chrome:
+    needs: build
     runs-on: ubuntu-latest
 
     steps:
@@ -67,6 +68,7 @@ jobs:
         path: java-testng-selenium/target/surefire-reports
 
   healenium:
+    needs: build
     runs-on: ubuntu-latest
 
     steps:
@@ -82,6 +84,7 @@ jobs:
         path: java-testng-selenium/target/surefire-reports
   
   testRigor:
+    needs: build
     runs-on: ubuntu-latest
 
     steps:
