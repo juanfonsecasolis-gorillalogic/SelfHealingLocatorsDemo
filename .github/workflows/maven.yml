@@ -51,11 +51,11 @@ jobs:
       run: |
         docker ps -a
 
-  chrome:
-    needs: build
-    runs-on: ubuntu-latest
+  #chrome:
+  #  needs: build
+  #  runs-on: ubuntu-latest
+  #  steps:
 
-    steps:
     - name: Test with Maven Chrome
       working-directory: java-testng-selenium
       run: |
@@ -67,11 +67,11 @@ jobs:
         name: Chrome-SelfHealingTestReport
         path: java-testng-selenium/target/surefire-reports
 
-  healenium:
-    needs: build
-    runs-on: ubuntu-latest
+  #healenium:
+  #  needs: build
+  #  runs-on: ubuntu-latest
+  #  steps:
 
-    steps:
     - name: Test with Maven Chrome Healenium
       working-directory: java-testng-selenium
       run: |
@@ -83,11 +83,11 @@ jobs:
         name: Healenium-SelfHealingTestReport
         path: java-testng-selenium/target/surefire-reports
   
-  testRigor:
-    needs: build
-    runs-on: ubuntu-latest
+  #testRigor:
+  #  needs: build
+  #  runs-on: ubuntu-latest
+  #  steps:
 
-    steps:
     - name: Test with Maven Chrome TestRigor
       working-directory: java-testng-selenium
       run: |
