@@ -35,30 +35,25 @@ jobs:
         mv apache-maven-3.9.9 /opt/
         echo "/opt/apache-maven-3.9.9/bin" >> $GITHUB_PATH
 
-    - name: Preview
-      run: |
-        pwd 
-        ls
-
     - name: Build with Maven
-      working-directory: ../java/testng
+      working-directory: java-testng-selenium
       run: |
         mvn clean compile -q
 
     - name: Docker Compose with Tests Action
       uses: adambirds/docker-compose-action@v1.5.0
       with:
-        compose-file: java/testng/healenium/docker-compose.yaml
+        compose-file: java-testng-selenium/healenium/docker-compose.yaml
       continue-on-error: false
 
     - name: Docker status
-      working-directory: ./java/testng
+      working-directory: java-testng-selenium
       run: |
         docker ps -a
 
     # Chrome
     - name: Test with Maven Chrome
-      working-directory: ./java/testng
+      working-directory: java-testng-selenium
       run: |
         mvn clean test -DDriverType=Chrome
       continue-on-error: true
@@ -66,11 +61,11 @@ jobs:
     - uses: actions/upload-artifact@v4
       with:
         name: Chrome-SelfHealingTestReport
-        path: ./java/testng/target/surefire-reports
+        path: java-testng-selenium/target/surefire-reports
 
     # Healenium
     - name: Test with Maven Chrome Healenium
-      working-directory: ./java/testng
+      working-directory: java-testng-selenium
       run: |
         mvn clean test -DDriverType=ChromeHealenium
       continue-on-error: true
@@ -78,11 +73,11 @@ jobs:
     - uses: actions/upload-artifact@v4
       with:
         name: Healenium-SelfHealingTestReport
-        path: ./java/testng/target/surefire-reports
+        path: java-testng-selenium/target/surefire-reports
   
     # TestRigor
     - name: Test with Maven Chrome TestRigor
-      working-directory: ./java/testng
+      working-directory: java-testng-selenium
       run: |
         mvn clean test -DDriverType=ChromeTestRigor
       continue-on-error: true
@@ -90,4 +85,4 @@ jobs:
     - uses: actions/upload-artifact@v4
       with:
         name: TestRigor-SelfHealingTestReport
-        path: ./java/testng/target/surefire-reports
+        path: java-testng-selenium/target/surefire-reports
