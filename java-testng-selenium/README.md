@@ -8,8 +8,11 @@ See [1].
 
 # Execution
 ```
-docker-compose up -d
-mvn clean test
+cd healenium; docker-compose up -d;
+cd ..; 
+mvn clean test -DDriverType=Chrome
+mvn clean test -DDriverType=ChromeHealenium
+mvn clean test -DDriverType=ChromeTestRigor
 ```
 
 # Tools

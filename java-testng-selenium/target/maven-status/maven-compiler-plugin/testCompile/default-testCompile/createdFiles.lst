@@ -3,3 +3,5 @@ selfhealinglocators/TestBase.class
 selfhealinglocators/DriverManager.class
 selfhealinglocators/DriverManager$1.class
 selfhealinglocators/Tests.class
+test/java/selfhealinglocators/Pages/PageBase.class
+test/java/selfhealinglocators/Pages/FormPage.class

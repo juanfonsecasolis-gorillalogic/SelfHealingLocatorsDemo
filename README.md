@@ -64,7 +64,7 @@ Table 3. Results.
 
 Please follow the steps below to reproduce the results obtained:
 1. If running for the first time, run `cd healenium; docker-compose up -d;`, otherwise start the Healenium's containers using Docker Desktop.
-2. Execute the non-self-healing suite: `mvn clean test -DDriverType=Chrome`.
+2. Execute the non-self-healing suite: `cd ..; mvn clean test -DDriverType=Chrome`.
 3. Copy test report at target/surefire-reports/index.html to a folder named Chrome.
 4. Repeat steps 2-3 with the other suites:
 ```

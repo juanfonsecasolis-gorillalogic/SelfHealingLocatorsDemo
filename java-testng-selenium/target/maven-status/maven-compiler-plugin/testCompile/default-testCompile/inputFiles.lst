@@ -1,4 +1,6 @@
-/Users/juan.fonseca/Repositories/SelfHealingLocatorsDemo/java-testng-selenium/src/test/java/selfhealinglocators/Tests.java
-/Users/juan.fonseca/Repositories/SelfHealingLocatorsDemo/java-testng-selenium/src/test/java/selfhealinglocators/DriverType.java
-/Users/juan.fonseca/Repositories/SelfHealingLocatorsDemo/java-testng-selenium/src/test/java/selfhealinglocators/TestBase.java
-/Users/juan.fonseca/Repositories/SelfHealingLocatorsDemo/java-testng-selenium/src/test/java/selfhealinglocators/DriverManager.java
+/Users/juan.fonseca/Repositories/SelfHealingLocatorsDemo/java-testng-selenium/src/test/java/selfhealinglocators/Pages/PageBase.java
+/Users/juan.fonseca/Repositories/SelfHealingLocatorsDemo/java-testng-selenium/src/test/java/selfhealinglocators/Helpers/DriverManager.java
+/Users/juan.fonseca/Repositories/SelfHealingLocatorsDemo/java-testng-selenium/src/test/java/selfhealinglocators/Helpers/DriverType.java
+/Users/juan.fonseca/Repositories/SelfHealingLocatorsDemo/java-testng-selenium/src/test/java/selfhealinglocators/Tests/TestBase.java
+/Users/juan.fonseca/Repositories/SelfHealingLocatorsDemo/java-testng-selenium/src/test/java/selfhealinglocators/Pages/FormPage.java
+/Users/juan.fonseca/Repositories/SelfHealingLocatorsDemo/java-testng-selenium/src/test/java/selfhealinglocators/Tests/Tests.java

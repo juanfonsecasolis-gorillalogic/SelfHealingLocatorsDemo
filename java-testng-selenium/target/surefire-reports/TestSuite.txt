@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 24, Failures: 1, Errors: 0, Skipped: 23, Time elapsed: 3.171 s <<< FAILURE! - in TestSuite
-setUp(selfhealinglocators.Tests)  Time elapsed: 2.43 s  <<< FAILURE!
+Tests run: 24, Failures: 1, Errors: 0, Skipped: 23, Time elapsed: 3.251 s <<< FAILURE! - in TestSuite
+setUp(selfhealinglocators.Tests)  Time elapsed: 2.265 s  <<< FAILURE!
 java.lang.NoClassDefFoundError: com/testrigor/selfhealingselenium/infrastructure/adapters/TestrigorAdapter
 	at selfhealinglocators.Tests.setUp(Tests.java:23)
 Caused by: java.lang.ClassNotFoundException: com.testrigor.selfhealingselenium.infrastructure.adapters.TestrigorAdapter
