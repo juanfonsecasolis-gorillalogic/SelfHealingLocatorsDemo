@@ -16,7 +16,7 @@ Gorilla Logic, Sabana Business Center 10th Floor, Bv. Ernesto Rohrmoser, San Jos
 
 **Theory.** Selenium.WebDriver.SelfHealing is the only available library for DotNet in the NuGet repository, and Healenium and TestRigor are libraries only available for Java. Selenium.WebDriver.SelfHealing offers a free monthly quota, Healenium is free without limit, and TestRigor is privative with a fifteen days trial [2, 3]. Only Healenium and TestRigor mentions the use of Artificial Intelligence.
 
-**Method.** We evaluated all libraries using the following test procedure: users opens a web form, enters a value in an input field, presses a button to submit the form, and confirms that value is displayed in a label. The test procedure was executed against the combination of locators specified in table 1 (test cases) using the web site implementation listed in table 2. 
+**Method.** We evaluated all libraries using the following test procedure: users opens a web form, enters a value in an input field, presses a button to submit the form, and confirms that value is displayed in a label. The test procedure was executed against the combination of locators specified in table 1 (test cases) using the web site implementation listed in table 2 (figure 1). 
 
 The test procedure was implemented for DotNet using Selenium/nUnit combo, and for Java using Maven/TestNg/Selenium. The test cases were executed in Healenium's docker hub container to avoid conflicts with the Driver version [2, 3].
 
@@ -40,6 +40,8 @@ Table 2. Site configuration.
 | [Site #1](demo-site/form-button-label.html)  | `\\input[@placeholder="Message"]`           | `\\button[@id='changer']` |
 | [Site #2](demo-site/form-button-label2.html) | `\\input[@placeholder="Message"]`           | `\\a[@id='pusher']` |
 | [Site #3](demo-site/form-button-label3.html) | `\\input[@placeholder="Enter some text"]`   | `\\button[@id='changer']` | 
+
+Figure 1. Site configuration.
 
 <img src='img/DOM_diagram.png'/>
 
