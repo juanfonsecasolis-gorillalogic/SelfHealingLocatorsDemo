@@ -11,11 +11,13 @@
     <properties>
         <mavenCompilerVersion>9</mavenCompilerVersion>
         <surefire.version>2.22.0</surefire.version>
-        <testng.version>LATEST</testng.version>
+        <testng.version>7.10.2</testng.version>
         <selenium.version>4.25.0</selenium.version>
         <!--selenium.version>3.9.0</selenium.version-->
-        <healenium.version>LATEST</healenium.version>
-        <selenium.remoteDriver.version>LATEST</selenium.remoteDriver.version>
+        <healenium.version>3.5.3</healenium.version>
+        <selenium.remoteDriver.version>4.25.0</selenium.remoteDriver.version>
+        <webdrivermanager.version>5.9.2</webdrivermanager.version>
+        <googleInject.version>4.2.0</googleInject.version>
         <testRigor.version>0.1.1-SNAPSHOT</testRigor.version>
         <config.file1>config/NoSelfHealing.xml</config.file1>
         <config.file2>config/Testhealenium.xml</config.file2>
@@ -63,7 +65,7 @@
         <dependency>
             <groupId>com.google.inject</groupId>
             <artifactId>guice</artifactId>
-            <version>4.2.0</version>
+            <version>${googleInject.version}</version>
         </dependency>
         <dependency>
             <groupId>com.epam.healenium</groupId>
@@ -78,7 +80,7 @@
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>5.9.2</version>
+            <version>${webdrivermanager.version}</version>
         </dependency>
     </dependencies>
 

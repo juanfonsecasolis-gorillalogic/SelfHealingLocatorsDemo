@@ -41,6 +41,8 @@ Table 2. Site configuration.
 | [Site #2](demo-site/form-button-label2.html) | `\\input[@placeholder="Message"]`           | `\\a[@id='pusher']` |
 | [Site #3](demo-site/form-button-label3.html) | `\\input[@placeholder="Enter some text"]`   | `\\button[@id='changer']` | 
 
+<img src='img/DOM_diagram.png'/>
+
 **Results.** As shown by table 3, Healenium is the solution with the highest passrate and the only one that passed its own proposed scenario. 
 
 Table 3. Results. 
