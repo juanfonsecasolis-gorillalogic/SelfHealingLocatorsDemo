@@ -14,11 +14,11 @@ Gorilla Logic, Sabana Business Center 10th Floor, Bv. Ernesto Rohrmoser, San Jos
 
 **Importance.** Self-healing drivers can reduce automation maintenance costs by automatically detecting changes in the web page layout and updating locators to ensure the test cases are functional [1].
 
-**Theory.** Selenium.WebDriver.SelfHealing is the only available library for DotNet in the NuGet repository, and Healenium and TestRigor are libraries only available for Java. Selenium.WebDriver.SelfHealing offers a free monthly quota, Healenium is free without limit, and TestRigor is privative with a fifteen days trial [2, 3]. Only Healenium and TestRigor mentions the use of Artificial Intelligence.
+**Theory.** Selenium.WebDriver.SelfHealing is the only available library for DotNet in the NuGet repository, and Healenium and TestRigor are only Java libraries. Selenium.WebDriver.SelfHealing offers a free monthly quota, Healenium is free without limit, and TestRigor is private with a fifteen-day trial [2, 3]. Only Healenium and TestRigor mention the use of Artificial Intelligence.
 
-**Method.** We evaluated all libraries using the following test procedure: users opens a web form, enters a value in an input field, presses a button to submit the form, and confirms that value is displayed in a label. The test procedure was executed against the combination of locators specified in table 1 (test cases) using the web site implementation listed in table 2 (figure 1). 
+**Method.** We evaluated all libraries using the following test procedure: user opens a web form, enters a value in an input field, presses a button to submit the form, and confirms that the value is displayed in a label. The test procedure was executed against the combination of locators specified in Table 1 (test cases) using the website implementation listed in Table 2 (Figure 1). 
 
-The test procedure was implemented for DotNet using Selenium/nUnit combo, and for Java using Maven/TestNg/Selenium. The test cases were executed in Healenium's docker hub container to avoid conflicts with the Driver version [2, 3].
+The test procedure was implemented for DotNet using Selenium/nUnit combo and for Java using Maven/TestNg/Selenium. The test cases were executed in Healenium's docker hub container to avoid conflicts with the Driver version [2, 3].
 
 Table 1. Test cases.
 
@@ -45,7 +45,7 @@ Figure 1. Site configuration.
 
 <img src='img/DOM_diagram.png'/>
 
-**Results.** As shown by table 3, Healenium is the solution with the highest passrate and the only one that passed its own proposed scenario. 
+**Results.** As shown by Table 3, Healenium is the solution with the highest pass-rate and the only one that passed its own proposed scenario. 
 
 Table 3. Results. 
 
@@ -66,19 +66,19 @@ Table 3. Results.
 2. Incorporate more libraries.
 3. For the Healenium case, evaluate the proposed test cases at the database level and explain the internal functioning.
 
-## Reproducibe results
+## Reproducible results
 
 Please follow the steps below to reproduce the results obtained:
 1. If running for the first time, run `cd healenium; docker-compose up -d;`, otherwise start the Healenium's containers using Docker Desktop.
 2. Execute the non-self-healing suite: `cd ..; mvn clean test -DDriverType=Chrome`.
-3. Copy test report at target/surefire-reports/index.html to a folder named Chrome.
+3. Copy the test report at target/surefire-reports/index.html to a folder named Chrome.
 4. Repeat steps 2-3 with the other suites:
 ```
 mvn clean test -DDriverType=ChromeHealenium
 mvn clean test -DDriverType=ChromeTestRigor
 ```
 
-**Note:** This solution also comes with a YAML file that runs in Github Actions.
+**Note:** This solution also comes with a YAML file that runs in GitHub Actions.
 
 ### Image versions for Healenium:
 * healenium/hlm-backend:3.4.5          
