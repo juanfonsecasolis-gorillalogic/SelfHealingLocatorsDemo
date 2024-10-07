@@ -1,5 +1,7 @@
 # Self-healing locators
 
+[![Java CI with Maven](https://github.com/juanfonsecaGL/SelfHealingLocatorsDemo/actions/workflows/maven.yml/badge.svg)](https://github.com/juanfonsecaGL/SelfHealingLocatorsDemo/actions/workflows/maven.yml)
+
 Juan M. Fonseca Solís
 
 Gorilla Logic, Sabana Business Center 10th Floor, Bv. Ernesto Rohrmoser, San José.
