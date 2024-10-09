@@ -77,6 +77,7 @@ Please follow the steps below to reproduce the results obtained:
 mvn clean test -DDriverType=ChromeHealenium
 mvn clean test -DDriverType=ChromeTestRigor
 ```
+5. For the case of Healenium, if you run the project locally (not in Github Actions) you can see the report by accessing http://localhost:7878/healenium/report/ (hint provided by Rajasekar Kulasekaran).
 
 **Note:** This solution also comes with a YAML file that runs in GitHub Actions.
 
