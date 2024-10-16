@@ -1,4 +1,4 @@
-package selfhealinglocators;
+package selfhealinglocators.Tests;
 
 import org.testng.annotations.DataProvider;
 import org.openqa.selenium.By;

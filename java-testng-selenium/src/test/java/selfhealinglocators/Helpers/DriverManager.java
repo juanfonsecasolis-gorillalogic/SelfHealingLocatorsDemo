@@ -1,4 +1,4 @@
-package selfhealinglocators;
+package selfhealinglocators.Helpers;
 
 import org.apache.commons.lang3.NotImplementedException;
 import org.openqa.selenium.WebDriver;
@@ -9,6 +9,13 @@ import com.testrigor.selfhealingselenium.*;
 
 public class DriverManager
 {
+    public enum DriverType
+    {
+        Chrome,
+        ChromeHealenium,
+        ChromeTestRigor
+    }
+
     public static WebDriver GetWebDriver(DriverType driverType) throws Exception
     {
         @SuppressWarnings("deprecation")

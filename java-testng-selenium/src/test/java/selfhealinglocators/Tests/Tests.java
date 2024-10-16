@@ -1,4 +1,4 @@
-package selfhealinglocators;
+package selfhealinglocators.Tests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +9,9 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import com.testrigor.selfhealingselenium.*;
-import test.java.selfhealinglocators.Pages.FormPage;
+import selfhealinglocators.Helpers.DriverManager;
+import selfhealinglocators.Helpers.DriverManager.DriverType;
+import selfhealinglocators.Pages.FormPage;
 
 public class Tests extends TestBase
 {

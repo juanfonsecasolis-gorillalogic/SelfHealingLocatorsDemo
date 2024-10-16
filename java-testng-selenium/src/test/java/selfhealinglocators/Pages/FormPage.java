@@ -1,4 +1,4 @@
-package test.java.selfhealinglocators.Pages;
+package selfhealinglocators.Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
