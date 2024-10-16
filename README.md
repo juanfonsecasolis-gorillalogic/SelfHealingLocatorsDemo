@@ -14,7 +14,11 @@ Gorilla Logic, Sabana Business Center 10th Floor, Bv. Ernesto Rohrmoser, San Jos
 
 **Importance.** Self-healing drivers can reduce automation maintenance costs by automatically detecting changes in the web page layout and updating locators to ensure the test cases are functional [1].
 
-**Theory.** Selenium.WebDriver.SelfHealing is the only available library for DotNet in the NuGet repository, and Healenium and TestRigor are only Java libraries. Selenium.WebDriver.SelfHealing offers a free monthly quota, Healenium is free without limit, and TestRigor is private with a fifteen-day trial [2, 3]. Only Healenium and TestRigor mention the use of Artificial Intelligence.
+**Theory.** Selenium.WebDriver.SelfHealing is the only available library for DotNet in the NuGet repository, and Healenium and TestRigor are only Java libraries. Selenium.WebDriver.SelfHealing offers a free monthly quota, Healenium is free without limit, and TestRigor is private with a fifteen-day trial [2, 3]. 
+
+Only Healenium and TestRigor mention to be using of Artificial Intelligence. Healenium, in particular, uses an algorithm called "Longest Common Subsequence" (LCS). The algorithm works as follows. The webpage layout is represented in a tree data structure, where each node of the tree contains a list of numerical weights assigned to the node's atributes (for instance, tag, Id, class, and value). For each node in the tree, the LCS calculates the sequence or "path" of previous nodes needed to arrive to that node (presumably from the html's root) and stores it in a database. Then, when a layout change invalidates a path, the algorithm searches a replacement using the closest subsequence [5]:
+
+> "solves the problem of finding the longest subsequence common to all sequences in a set of sequences with extra weight for tag, Id, class, value, other attributes. So if an element changes its place in DOM or has a new id, Healenium will find it and generate new locator." - Chernyshova, A.
 
 **Method.** We evaluated all libraries using the following test procedure: user opens a web form, enters a value in an input field, presses a button to submit the form, and confirms that the value is displayed in a label. The test procedure was executed against the combination of locators specified in Table 1 (test cases) using the website implementation listed in Table 2 (Figure 1). 
 
