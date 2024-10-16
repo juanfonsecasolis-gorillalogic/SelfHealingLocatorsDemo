@@ -53,7 +53,7 @@ Figure 1. Site configuration.
 
 Table 3. Results. 
 
-| TC | NoSelfHealing | TestRigor | Healenium | DotNet SelfHealing | 
+| TC | NoSelfHealing | TestRigor<sup>1</sup> | Healenium | DotNet SelfHealing | 
 | --- | --- | --- | --- | --- |
 | TC1 | ✓ | x | ✓ | ✓ |
 | TC2 | ✓ | x | ✓ | ✓ |
@@ -64,6 +64,8 @@ Table 3. Results.
 | TC7 | x | x | ✓ | x |
 | TC8 | x | x | ✓ | x |
 | Pass rate | .5 | .0 | .75 | .5 |
+
+<sup>1</sup> For TestRigor we got a "Java.lang.NoClassDefFoundError: com/testrigor/selfhealingselenium/infrastructure/adapters/TestrigorAdapter" error.
 
 **Future work.** 
 1. Find more scenarios of broken locators to evaluate the implemented libraries.
