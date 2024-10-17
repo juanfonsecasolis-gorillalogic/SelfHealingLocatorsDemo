@@ -11,7 +11,8 @@ import org.testng.annotations.Test;
 import com.testrigor.selfhealingselenium.*;
 import selfhealinglocators.Helpers.DriverManager;
 import selfhealinglocators.Helpers.DriverManager.DriverType;
-import selfhealinglocators.Pages.FormPage;
+import selfhealinglocators.Pages.FormPageSite123;
+import selfhealinglocators.Pages.FormPageSite45;
 
 public class Tests extends TestBase
 {
@@ -30,12 +31,12 @@ public class Tests extends TestBase
         webDriver.quit();
     }
 
-    @Test(dataProvider = "testData")
-    void FormTest(String url, By inputTextLocator, By updateButtonLocator, String classification)
+    @Test(dataProvider = "testDataSite123")
+    void TestSite123(String url, By inputTextLocator, By updateButtonLocator, String classification)
     {
         // arrange
-        String expectedMessage = "Testing 123";
-        FormPage formPage = new FormPage(url, inputTextLocator, updateButtonLocator, webDriver);
+        String expectedMessage = "Testing site 123";
+        FormPageSite123 formPage = new FormPageSite123(url, inputTextLocator, updateButtonLocator, webDriver);
 
         /*if(_driverType==DriverType.ChromeTestRigor)
         {
@@ -47,5 +48,24 @@ public class Tests extends TestBase
 
         // assert
         Assert.assertTrue(formPage.getLabel().contains(expectedMessage));
+    }
+
+    //@Test(dataProvider = "testDataSite45")
+    public void TestSite45(String url, By buttonLocator, String classification)
+    {
+        // arrange
+        String expectedMessage = "Go to Gorilla Logic site";
+        FormPageSite45 formPage = new FormPageSite45(url, buttonLocator, webDriver);
+        
+        /*if(_driverType==DriverType.ChromeTestRigor)
+        {
+            ((SelfHealingDriver) _driver).setTestCaseName("test");
+        }*/
+
+        // act
+        formPage.revealHiddenLink();
+
+        // assert
+        Assert.assertEquals(formPage.getPageLink(),expectedMessage);
     }
 }

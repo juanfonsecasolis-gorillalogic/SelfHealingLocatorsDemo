@@ -5,7 +5,7 @@ public class TestBase
     protected bool _testPassed;
     protected string _reportFilePath = Path.Combine(Directory.GetCurrentDirectory(),"TestResultsSummary.txt");
     
-    const string _baseSite = "https://juanfonsecagl.github.io/SelfHealingLocatorsDemo/demo-site";
+    const string _baseSite = "https://juanfonsecasolis-gorillalogic.github.io/SelfHealingLocatorsDemo/demo-site";
     const string _site1 = $"{_baseSite}/demo-site1/form-button-label.html";
     const string _site2 = $"{_baseSite}/demo-site1/form-button-label2.html";
     const string _site3 = $"{_baseSite}/demo-site1/form-button-label3.html";

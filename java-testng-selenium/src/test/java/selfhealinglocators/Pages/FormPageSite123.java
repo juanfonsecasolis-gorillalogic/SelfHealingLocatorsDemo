@@ -4,13 +4,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class FormPage extends PageBase {
+public class FormPageSite123 extends PageBase {
     
     By textMessageLocator = By.xpath("//p[1] | //*[@id='displayMessage']");
     By inputTextLocator;
     By updateButtonLocator; 
 
-    public FormPage(String url, By inputTextLocator, By updateButtonLocator, WebDriver webDriver){
+    public FormPageSite123(String url, By inputTextLocator, By updateButtonLocator, WebDriver webDriver){
         super(webDriver);
         webDriver.navigate().to(url);
         this.inputTextLocator = inputTextLocator;

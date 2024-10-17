@@ -20,7 +20,7 @@ Only Healenium and TestRigor mention to be using of Artificial Intelligence. Hea
 
 > "solves the problem of finding the longest subsequence common to all sequences in a set of sequences with extra weight for tag, Id, class, value, other attributes. So if an element changes its place in DOM or has a new id, Healenium will find it and generate new locator." - Chernyshova, A.
 
-**Method.** We evaluated all libraries using the following test procedure: user opens a web form, enters a value in an input field, presses a button to submit the form, and confirms that the value is displayed in a label. The test procedure was executed against the combination of locators specified in Table 1 (test cases) using the website implementation listed in Table 2 (Figure 1). 
+**Method.** We evaluated all libraries using the following test procedure: user opens a web form, enters a value in an input field, presses a button to submit the form, and confirms that the value is displayed in a label. The test procedure was executed against the combination of locators specified in Table 1 (test cases) using the website implementation listed in Table 2 (figures 1 and 2). 
 
 The test procedure was implemented for DotNet using Selenium/nUnit combo and for Java using Maven/TestNg/Selenium. The test cases were executed in Healenium's docker hub container to avoid conflicts with the Driver version [2, 3].
 
@@ -32,14 +32,14 @@ Table 1. Test cases.
 | TC2 | TestRigor | Site #2 | `//input[@id='messageNew']` | `//a[@id='pusher']` | valid |
 | TC3 | TestRigor | Site #1 | `//input[@id='messageNew']` | `//a[@id='pusher']` | broken |
 | TC4 | TestRigor | Site #2 | `//input[@id='messageNew']` | `//button[@id='changer']` | broken |
-| TC5 | Chernyshova, A. (Healenium) | Site #1 | `//input[@placeholder='Message']` | `//button[@id='changer']` | valid |
-| TC6 | Chernyshova, A. (Healenium) | Site #3 | `//input[@placeholder='Enter some text']` | `//button[@id='changer']` | valid |
-| TC7 | Chernyshova, A. (Healenium) | Site #1 | `//input[@placeholder='Enter some text']` | `//button[@id='changer']` | broken | 
-| TC8 | Chernyshova, A. (Healenium) | Site #3 | `//input[@placeholder='Message']` | `//button[@id='changer']` | broken |
-| TC9 | Chernyshova, A. (Healenium) | Site #4 | - | `//div[@class='container']/div/div/button` | valid |
-| TC10 | Chernyshova, A. (Healenium) | Site #4 | - | `//div[@class='container']/button` | broken |
-| TC11 | Chernyshova, A. (Healenium) | Site #5 | - | `//div[@class='container']/button` | valid |
-| TC12 | Chernyshova, A. (Healenium) | Site #5 | - | `//div[@class='container']/div/div/button` | broken |
+| TC5 | Chernyshova | Site #1 | `//input[@placeholder='Message']` | `//button[@id='changer']` | valid |
+| TC6 | Chernyshova | Site #3 | `//input[@placeholder='Enter some text']` | `//button[@id='changer']` | valid |
+| TC7 | Chernyshova | Site #1 | `//input[@placeholder='Enter some text']` | `//button[@id='changer']` | broken | 
+| TC8 | Chernyshova | Site #3 | `//input[@placeholder='Message']` | `//button[@id='changer']` | broken |
+| TC9 | Chernyshova | Site #4 | - | `//div[@class='container']/div/div/button` | valid |
+| TC10 | Chernyshova | Site #4 | - | `//div[@class='container']/button` | broken |
+| TC11 | Chernyshova | Site #5 | - | `//div[@class='container']/button` | valid |
+| TC12 | Chernyshova | Site #5 | - | `//div[@class='container']/div/div/button` | broken |
 
 Table 2. Site configuration.
 
@@ -51,9 +51,12 @@ Table 2. Site configuration.
 | [Site #4](demo-site/demo-site2/reveal-link1.html) | -   | `//div[@class='container']/div/div/button` |
 | [Site #5](demo-site/demo-site2/reveal-link2.html) | -   | `//div[@class='container']/button` | 
 
-Figure 1. Sites configuration.
+Figure 1. Site 1-3 configuration.
 
 <img src='img/DOM_diagram_site1.png'/>
+
+Figure 2. Sites 4-5 configuration.
+
 <img src='img/DOM_diagram_site2.png'/>
 
 **Results.** As shown by Table 3, Healenium is the solution with the highest pass-rate and the only one that passed its own proposed scenario. 
