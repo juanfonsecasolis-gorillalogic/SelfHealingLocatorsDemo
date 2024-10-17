@@ -24,19 +24,35 @@ public class Tests : TestBase
         File.AppendAllText(_reportFilePath, $"{_testCaseId} - { outcome }\n");
     }
 
-    [TestCaseSource(nameof(TestData))]
-    public void FormTest(string testCaseId, string url, By inputTextLocator, By updateButtonLocator, string classification)
+    [TestCaseSource(nameof(TestDataSite123))]
+    public void TestSite123(string testCaseId, string url, By inputTextLocator, By updateButtonLocator, string classification)
     {
         // arrange
         _testCaseId = testCaseId;
-        string expectedMessage = "Testing 123";
-        FormPage formPage = new(url, inputTextLocator, updateButtonLocator, classification, _driver);
+        string expectedMessage = "Testing site 123";
+        FormPageSite123 formPage = new(url, inputTextLocator, updateButtonLocator, classification, _driver);
         
         // act
         formPage.UpdateLabel(expectedMessage);
 
         // assert
         Assert.That(formPage.GetLabel().Contains(expectedMessage));
+        _testPassed = true;
+    }
+
+    [TestCaseSource(nameof(TestDataSite45))]
+    public void TestSite45(string testCaseId, string url, By buttonLocator, string classification)
+    {
+        // arrange
+        _testCaseId = testCaseId;
+        string expectedMessage = "Go to Gorilla Logic site";
+        FormPageSite45 formPage = new(url, buttonLocator, classification, _driver);
+        
+        // act
+        formPage.RevealHiddenLink();
+
+        // assert
+        Assert.That(formPage.GetPageLink().Equals(expectedMessage));
         _testPassed = true;
     }
 }

@@ -37,7 +37,7 @@ Table 1. Test cases.
 | TC7 | Chernyshova, A. (Healenium) | Site #1 | `//input[@placeholder='Enter some text']` | `//button[@id='changer']` | broken | 
 | TC8 | Chernyshova, A. (Healenium) | Site #3 | `//input[@placeholder='Message']` | `//button[@id='changer']` | broken |
 | TC9 | Chernyshova, A. (Healenium) | Site #4 | - | `//div[@class='container']/div/div/button` | valid |
-| TC10 | Chernyshova, A. (Healenium) | Site #4 | - | `//div[@class='container']/div/div/button` | broken |
+| TC10 | Chernyshova, A. (Healenium) | Site #4 | - | `//div[@class='container']/button` | broken |
 | TC11 | Chernyshova, A. (Healenium) | Site #5 | - | `//div[@class='container']/button` | valid |
 | TC12 | Chernyshova, A. (Healenium) | Site #5 | - | `//div[@class='container']/div/div/button` | broken |
 
@@ -48,8 +48,8 @@ Table 2. Site configuration.
 | [Site #1](demo-site/demo-site1/form-button-label.html)  | `//input[@placeholder="Message"]`           | `//button[@id='changer']` |
 | [Site #2](demo-site/demo-site1/form-button-label2.html) | `//input[@placeholder="Message"]`           | `//a[@id='pusher']` |
 | [Site #3](demo-site/demo-site1/form-button-label3.html) | `//input[@placeholder="Enter some text"]`   | `//button[@id='changer']` | 
-| [Site #4](demo-site/demo-site1/form-button-label2.html) | -   | `//div[@class='container']/div/div/button` |
-| [Site #5](demo-site/demo-site1/form-button-label3.html) | -   | `//div[@class='container']/button` | 
+| [Site #4](demo-site/demo-site2/reveal-link1.html) | -   | `//div[@class='container']/div/div/button` |
+| [Site #5](demo-site/demo-site2/reveal-link2.html) | -   | `//div[@class='container']/button` | 
 
 Figure 1. Sites configuration.
 
