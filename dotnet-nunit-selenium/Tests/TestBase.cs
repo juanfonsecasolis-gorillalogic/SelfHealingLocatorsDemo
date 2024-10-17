@@ -5,9 +5,10 @@ public class TestBase
     protected bool _testPassed;
     protected string _reportFilePath = Path.Combine(Directory.GetCurrentDirectory(),"TestResultsSummary.txt");
     
-    const string _site1 = "https://juanfonsecagl.github.io/SelfHealingLocatorsDemo/demo-site/form-button-label.html";
-    const string _site2 = "https://juanfonsecagl.github.io/SelfHealingLocatorsDemo/demo-site/form-button-label2.html";
-    const string _site3 = "https://juanfonsecagl.github.io/SelfHealingLocatorsDemo/demo-site/form-button-label3.html";
+    const string _baseSite = "https://juanfonsecagl.github.io/SelfHealingLocatorsDemo/demo-site/demo-site1";
+    const string _site1 = $"{_baseSite}/form-button-label.html";
+    const string _site2 = $"{_baseSite}/form-button-label2.html";
+    const string _site3 = $"{_baseSite}/form-button-label3.html";
 
     public static object[] TestData =
     {

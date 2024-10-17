@@ -5,9 +5,10 @@ import org.openqa.selenium.By;
 
 public class TestBase 
 {
-    String site1 = "https://juanfonsecagl.github.io/SelfHealingLocatorsDemo/demo-site/form-button-label.html";
-    String site2 = "https://juanfonsecagl.github.io/SelfHealingLocatorsDemo/demo-site/form-button-label2.html";
-    String site3 = "https://juanfonsecagl.github.io/SelfHealingLocatorsDemo/demo-site/form-button-label3.html";
+    String baseSite = "https://juanfonsecagl.github.io/SelfHealingLocatorsDemo/demo-site/demo-site1";
+    String site1 = baseSite+"/form-button-label.html";
+    String site2 = baseSite+"/form-button-label2.html";
+    String site3 = baseSite+"/form-button-label3.html";
 
     @DataProvider(name = "testData")
     public Object[][] testData() {

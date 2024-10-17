@@ -41,9 +41,9 @@ Table 2. Site configuration.
 
 | Page | Input box | Button |
 | --- | --- | --- |
-| [Site #1](demo-site/form-button-label.html)  | `\\input[@placeholder="Message"]`           | `\\button[@id='changer']` |
-| [Site #2](demo-site/form-button-label2.html) | `\\input[@placeholder="Message"]`           | `\\a[@id='pusher']` |
-| [Site #3](demo-site/form-button-label3.html) | `\\input[@placeholder="Enter some text"]`   | `\\button[@id='changer']` | 
+| [Site #1](demo-site/demo-site1/form-button-label.html)  | `\\input[@placeholder="Message"]`           | `\\button[@id='changer']` |
+| [Site #2](demo-site/demo-site1/form-button-label2.html) | `\\input[@placeholder="Message"]`           | `\\a[@id='pusher']` |
+| [Site #3](demo-site/demo-site1/form-button-label3.html) | `\\input[@placeholder="Enter some text"]`   | `\\button[@id='changer']` | 
 
 Figure 1. Site configuration.
 
