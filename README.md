@@ -26,28 +26,35 @@ The test procedure was implemented for DotNet using Selenium/nUnit combo and for
 
 Table 1. Test cases.
 
-| TC | Proposed by | Site | Locator 1 | Locator 2 | Locator Configuration |
+| TC | Proposed by | Site | Input box | Button | Locator Configuration |
 | --- | --- | --- | --- | --- | --- |
-| TC1 | TestRigor | Site #1 | //input[@id='messageNew'] | //button[@id='changer'] | valid |
-| TC2 | TestRigor | Site #2 | //input[@id='messageNew'] | //a[@id='pusher'] | valid |
-| TC3 | TestRigor | Site #1 | //input[@id='messageNew'] | //a[@id='pusher'] | broken |
-| TC4 | TestRigor | Site #2 | //input[@id='messageNew'] | //button[@id='changer'] | broken |
-| TC5 | Healenium | Site #1 | //input[@placeholder='Message'] | //button[@id='changer'] | valid |
-| TC6 | Healenium | Site #3 | //input[@placeholder='Enter some text'] | //button[@id='changer'] | valid |
-| TC7 | Healenium | Site #1 | //input[@placeholder='Enter some text'] | //button[@id='changer'] | broken | 
-| TC8 | Healenium | Site #3 | //input[@placeholder='Message'] | //button[@id='changer'] | broken |
+| TC1 | TestRigor | Site #1 | `//input[@id='messageNew']` | `//button[@id='changer']` | valid |
+| TC2 | TestRigor | Site #2 | `//input[@id='messageNew']` | `//a[@id='pusher']` | valid |
+| TC3 | TestRigor | Site #1 | `//input[@id='messageNew']` | `//a[@id='pusher']` | broken |
+| TC4 | TestRigor | Site #2 | `//input[@id='messageNew']` | `//button[@id='changer']` | broken |
+| TC5 | Chernyshova, A. (Healenium) | Site #1 | `//input[@placeholder='Message']` | `//button[@id='changer']` | valid |
+| TC6 | Chernyshova, A. (Healenium) | Site #3 | `//input[@placeholder='Enter some text']` | `//button[@id='changer']` | valid |
+| TC7 | Chernyshova, A. (Healenium) | Site #1 | `//input[@placeholder='Enter some text']` | `//button[@id='changer']` | broken | 
+| TC8 | Chernyshova, A. (Healenium) | Site #3 | `//input[@placeholder='Message']` | `//button[@id='changer']` | broken |
+| TC9 | Chernyshova, A. (Healenium) | Site #4 | - | `//div[@class='container']/div/div/button` | valid |
+| TC10 | Chernyshova, A. (Healenium) | Site #4 | - | `//div[@class='container']/div/div/button` | broken |
+| TC11 | Chernyshova, A. (Healenium) | Site #5 | - | `//div[@class='container']/button` | valid |
+| TC12 | Chernyshova, A. (Healenium) | Site #5 | - | `//div[@class='container']/div/div/button` | broken |
 
 Table 2. Site configuration.
 
 | Page | Input box | Button |
 | --- | --- | --- |
-| [Site #1](demo-site/demo-site1/form-button-label.html)  | `\\input[@placeholder="Message"]`           | `\\button[@id='changer']` |
-| [Site #2](demo-site/demo-site1/form-button-label2.html) | `\\input[@placeholder="Message"]`           | `\\a[@id='pusher']` |
-| [Site #3](demo-site/demo-site1/form-button-label3.html) | `\\input[@placeholder="Enter some text"]`   | `\\button[@id='changer']` | 
+| [Site #1](demo-site/demo-site1/form-button-label.html)  | `//input[@placeholder="Message"]`           | `//button[@id='changer']` |
+| [Site #2](demo-site/demo-site1/form-button-label2.html) | `//input[@placeholder="Message"]`           | `//a[@id='pusher']` |
+| [Site #3](demo-site/demo-site1/form-button-label3.html) | `//input[@placeholder="Enter some text"]`   | `//button[@id='changer']` | 
+| [Site #4](demo-site/demo-site1/form-button-label2.html) | -   | `//div[@class='container']/div/div/button` |
+| [Site #5](demo-site/demo-site1/form-button-label3.html) | -   | `//div[@class='container']/button` | 
 
-Figure 1. Site configuration.
+Figure 1. Sites configuration.
 
-<img src='img/DOM_diagram.png'/>
+<img src='img/DOM_diagram_site1.png'/>
+<img src='img/DOM_diagram_site2.png'/>
 
 **Results.** As shown by Table 3, Healenium is the solution with the highest pass-rate and the only one that passed its own proposed scenario. 
 
