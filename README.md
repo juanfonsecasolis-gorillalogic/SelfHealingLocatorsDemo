@@ -69,10 +69,10 @@ Table 3. Results.
 | TC6 | ✓ | x | ✓ | ✓ |
 | TC7 | x | x | ✓ | x |
 | TC8 | x | x | ✓ | x |
-| TC9 | ✓ | - | ✓ | ✓ |
-| TC10 | x | - | ✓ | x |
-| TC11 | ✓ | - | ✓ | ✓ |
-| TC12 | x | - | ✓ | x |
+| TC9 | ✓ | x | ✓ | ✓ |
+| TC10 | x | x | ✓ | x |
+| TC11 | ✓ | x | ✓ | ✓ |
+| TC12 | x | x | ✓ | x |
 | Pass rate | .5 | .0 | .83 | 0.5 |
 
 <sup>1</sup> For TestRigor we got a "Java.lang.NoClassDefFoundError: com/testrigor/selfhealingselenium/infrastructure/adapters/TestrigorAdapter" error.
