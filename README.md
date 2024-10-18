@@ -104,9 +104,9 @@ mvn clean test -DDriverType=ChromeTestRigor
 * postgres:15.5-alpine   
 
 ## Note about Healenium
-Healenium uses an algorithm called "Longest Common Subsequence" (LCS). The algorithm works as follows. The webpage layout is represented in a tree data structure, where each node of the tree contains a list of numerical weights assigned to the node's atributes (for instance, tag, Id, class, and value). For each node in the tree, the LCS calculates the sequence or "path" of previous nodes needed to arrive to that node (presumably from the html's root) and stores it in a database. Then, when a layout change invalidates a path, the algorithm searches a replacement using the closest subsequence [5]:
+Healenium uses an algorithm called "Longest Common Subsequence" (LCS). The algorithm works as follows. The webpage layout is represented in a tree data structure. Each node of the tree represents a web element and contains a list of numerical weights associated to the atributes (for instance, tag, Id, class, and value). For each node in the tree, the LCS calculates the path (or sequence of nodes) from the HTML root. Then, when a layout change invalidates certain path, the algorithm searches in all paths the closest subsequence to perform the recovery [5]. In Chernyshova, A. words:
 
-> "It solves the problem of finding the longest subsequence common to all sequences in a set of sequences with extra weight for tag, Id, class, value, other attributes. So if an element changes its place in DOM or has a new id, Healenium will find it and generate new locator." - Chernyshova, A.
+> "It solves the problem of finding the longest subsequence common to all sequences in a set of sequences with extra weight for tag, Id, class, value, other attributes. So if an element changes its place in DOM or has a new id, Healenium will find it and generate new locator."
 
 ## References
 1. Herschmann, J., Murphy, T., Scheibmeir, J., O'Connor, F., & Wan, D. D. K. (2024, February 13). Market guide for AI-augmented software-testing tools (ID G00783848). Gartner.
