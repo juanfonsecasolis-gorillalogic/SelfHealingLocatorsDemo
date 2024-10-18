@@ -8,7 +8,7 @@ class DriverManager
     public static ISelfHealingWebDriver GetDriver()
     {
         var options = new ChromeOptions();
-        //options.AddArgument("--headless=true");
+        options.AddArgument("--headless=true");
         return new ChromeDriver(options).ToSelfHealingDriver();
     }
 }
