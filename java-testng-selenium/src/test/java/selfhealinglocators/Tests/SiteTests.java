@@ -29,7 +29,7 @@ public class SiteTests extends TestBase
         webDriver.quit();
     }
 
-    //@Test(dataProvider = "testDataSite123")
+    @Test(dataProvider = "testDataSite123")
     void TestSite123(String testCaseId, String url, By inputTextLocator, By updateButtonLocator, String classification)
     {
         // arrange
