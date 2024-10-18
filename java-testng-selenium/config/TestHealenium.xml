@@ -3,7 +3,7 @@
     <test name="TestHealenium">
         <parameter name="driverType" value="ChromeHealenium"/>
         <classes>
-            <class name="selfhealinglocators.Tests"/>
+            <class name="selfhealinglocators.Tests.SiteTests"/>
         </classes>
     </test>
 </suite>

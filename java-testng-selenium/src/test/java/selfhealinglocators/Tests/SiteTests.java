@@ -2,19 +2,17 @@ package selfhealinglocators.Tests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import com.testrigor.selfhealingselenium.*;
 import selfhealinglocators.Helpers.DriverManager;
 import selfhealinglocators.Helpers.DriverManager.DriverType;
 import selfhealinglocators.Pages.FormPageSite123;
 import selfhealinglocators.Pages.FormPageSite45;
 
-public class Tests extends TestBase
+public class SiteTests extends TestBase
 {
     protected WebDriver webDriver;
     DriverType driverType;
@@ -31,8 +29,8 @@ public class Tests extends TestBase
         webDriver.quit();
     }
 
-    @Test(dataProvider = "testDataSite123")
-    void TestSite123(String url, By inputTextLocator, By updateButtonLocator, String classification)
+    //@Test(dataProvider = "testDataSite123")
+    void TestSite123(String testCaseId, String url, By inputTextLocator, By updateButtonLocator, String classification)
     {
         // arrange
         String expectedMessage = "Testing site 123";
@@ -50,8 +48,8 @@ public class Tests extends TestBase
         Assert.assertTrue(formPage.getLabel().contains(expectedMessage));
     }
 
-    //@Test(dataProvider = "testDataSite45")
-    public void TestSite45(String url, By buttonLocator, String classification)
+    @Test(dataProvider = "testDataSite45")
+    public void TestSite45(String testCaseId, String url, By buttonLocator, String classification)
     {
         // arrange
         String expectedMessage = "Go to Gorilla Logic site";

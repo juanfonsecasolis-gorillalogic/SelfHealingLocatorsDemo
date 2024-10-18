@@ -69,11 +69,11 @@ Table 3. Results.
 | TC6 | ✓ | x | ✓ | ✓ |
 | TC7 | x | x | ✓ | x |
 | TC8 | x | x | ✓ | x |
-| TC9 | - | - | - | - |
-| TC10 | - | - | - | - |
-| TC11 | - | - | - | - |
-| TC12 | - | - | - | - |
-| Pass rate | .5 | .0 | .75 | .5 |
+| TC9 | ✓ | - | ✓ | ✓ |
+| TC10 | x | - | ✓ | x |
+| TC11 | ✓ | - | ✓ | ✓ |
+| TC12 | x | - | ✓ | x |
+| Pass rate | .5 | .0 | .83 | 0.5 |
 
 <sup>1</sup> For TestRigor we got a "Java.lang.NoClassDefFoundError: com/testrigor/selfhealingselenium/infrastructure/adapters/TestrigorAdapter" error.
 
@@ -108,7 +108,7 @@ mvn clean test -DDriverType=ChromeTestRigor
 ## Note about Healenium
 Healenium uses an algorithm called "Longest Common Subsequence" (LCS). The algorithm works as follows. The webpage layout is represented in a tree data structure, where each node of the tree contains a list of numerical weights assigned to the node's atributes (for instance, tag, Id, class, and value). For each node in the tree, the LCS calculates the sequence or "path" of previous nodes needed to arrive to that node (presumably from the html's root) and stores it in a database. Then, when a layout change invalidates a path, the algorithm searches a replacement using the closest subsequence [5]:
 
-> "solves the problem of finding the longest subsequence common to all sequences in a set of sequences with extra weight for tag, Id, class, value, other attributes. So if an element changes its place in DOM or has a new id, Healenium will find it and generate new locator." - Chernyshova, A.
+> "It solves the problem of finding the longest subsequence common to all sequences in a set of sequences with extra weight for tag, Id, class, value, other attributes. So if an element changes its place in DOM or has a new id, Healenium will find it and generate new locator." - Chernyshova, A.
 
 ## References
 1. Herschmann, J., Murphy, T., Scheibmeir, J., O'Connor, F., & Wan, D. D. K. (2024, February 13). Market guide for AI-augmented software-testing tools (ID G00783848). Gartner.

@@ -3,7 +3,7 @@
     <test name="NoSelfHealing">
         <parameter name="driverType" value="Chrome"/>
         <classes>
-            <class name="selfhealinglocators.Tests"/>
+            <class name="selfhealinglocators.Tests.SiteTests"/>
         </classes>
     </test>
 </suite>

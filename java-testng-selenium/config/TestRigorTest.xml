@@ -3,7 +3,7 @@
     <test name="TestRigorTest">
         <parameter name="driverType" value="ChromeTestRigor"/>
         <classes>
-            <class name="selfhealinglocators.Tests"/>
+            <class name="selfhealinglocators.Tests.SiteTests"/>
         </classes>
     </test>
 </suite>
