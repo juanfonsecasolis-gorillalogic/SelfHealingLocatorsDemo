@@ -104,7 +104,7 @@ mvn clean test -DDriverType=ChromeTestRigor
 * postgres:15.5-alpine   
 
 ## Note about Healenium
-Healenium uses an algorithm called "Longest Common Subsequence" (LCS). The algorithm works as follows. The webpage layout is represented in a tree data structure. Each node of the tree represents a web element and contains a list of numerical weights associated to the atributes (for instance, tag, Id, class, and value). For each node in the tree, the LCS calculates the path (or sequence of nodes) from the HTML root. Then, when a layout change invalidates certain path, the algorithm searches in all paths the closest subsequence to perform the recovery [5]. In Chernyshova, A. words:
+Healenium uses an algorithm called "Longest Common Subsequence" (LCS). The algorithm works as follows. The webpage layout is represented in a tree data structure. Each node of the tree represents a web element and contains a list of numerical weights associated to the atributes (for instance, tag, Id, class, and value). For each node in the tree, the LCS calculates the path, or sequence of nodes, from the root of the tree (the HTML element). This path is like a web relative locator. Then, when a change in the layout invalidates a path, the algorithm uses the previously calculated weights and paths (from other nodes) to find the closest subsequence and performs a recovery [5]. In Chernyshova, A. words:
 
 > "It solves the problem of finding the longest subsequence common to all sequences in a set of sequences with extra weight for tag, Id, class, value, other attributes. So if an element changes its place in DOM or has a new id, Healenium will find it and generate new locator."
 
