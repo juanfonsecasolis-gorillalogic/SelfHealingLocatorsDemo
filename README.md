@@ -16,9 +16,9 @@ Gorilla Logic, Sabana Business Center 10th Floor, Bv. Ernesto Rohrmoser, San Jos
 
 **Theory.** Selenium.WebDriver.SelfHealing is the only available library for DotNet in the NuGet repository, and Healenium and TestRigor are only Java libraries. Selenium.WebDriver.SelfHealing offers a free monthly quota, Healenium is free without limit, and TestRigor is private with a fifteen-day trial [2, 3]. Only Healenium and TestRigor mention to be using of Artificial Intelligence. 
 
-**Method.** We evaluated all libraries using the following test procedure: user opens a web form, enters a value in an input field, presses a button to submit the form, and confirms that the value is displayed in a label. The test procedure was executed against the combination of locators specified in Table 1 (test cases) using the website implementation listed in Table 2 (figures 1 and 2). 
+**Method.** We evaluated all libraries using the following test procedure: user opens a web form, enters a value in an input field, presses a button to submit the form, and confirms that the value is displayed in a label. The test procedure was executed against the combination of locators specified in Table 1 (test cases) using the website implementation listed in Table 2 (figures 1 and 2) and proposed by TestRigor and Chernyshova [3, 4, 5]. 
 
-The test procedure was implemented for DotNet using Selenium/nUnit combo and for Java using Maven/TestNg/Selenium. The test cases were executed in Healenium's docker hub container to avoid conflicts with the Driver version [2, 3].
+The test procedure was implemented for DotNet using Selenium/nUnit combo and for Java using Maven/TestNg/Selenium. The test cases were executed in Healenium's docker hub container to avoid conflicts with the Driver version.
 
 Table 1. Test cases.
 
@@ -78,9 +78,9 @@ Table 3. Results.
 <sup>1</sup> For TestRigor we got a "Java.lang.NoClassDefFoundError: com/testrigor/selfhealingselenium/infrastructure/adapters/TestrigorAdapter" error.
 
 **Future work.** 
-1. Find more scenarios of broken locators to evaluate the implemented libraries.
-2. Incorporate more libraries.
-3. For the Healenium case, evaluate the proposed test cases at the database level and explain the internal functioning.
+1. Investigate a solution for the "TestrigorAdapter" issue.
+2. Evaluate the chosen libraries against more test cases and websites.
+3. Incorporate more self-healing libraries (like LambdaTest or BrowserStack).
 
 ## Reproducible results
 
