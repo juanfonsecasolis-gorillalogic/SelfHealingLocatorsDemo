@@ -14,11 +14,9 @@ Gorilla Logic, Sabana Business Center 10th Floor, Bv. Ernesto Rohrmoser, San Jos
 
 **Importance.** Self-healing drivers can reduce automation maintenance costs by automatically detecting changes in the web page layout and updating locators to ensure the test cases are functional [1].
 
-**Theory.** Selenium.WebDriver.SelfHealing is the only available library for DotNet in the NuGet repository, and Healenium and TestRigor are only Java libraries. Selenium.WebDriver.SelfHealing offers a free monthly quota, Healenium is free without limit, and TestRigor is private with a fifteen-day trial [2, 3]. Only Healenium and TestRigor mention to be using of Artificial Intelligence. 
+**Theory.** Selenium.WebDriver.SelfHealing is the only available library for DotNet in the NuGet repository, and Healenium and TestRigor are only Java libraries. Selenium.WebDriver.SelfHealing offers a free monthly quota, Healenium is free without limit, and TestRigor is private with a fifteen-day trial [2, 3]. Only Healenium and TestRigor mentioned to be using of Artificial Intelligence. 
 
-**Method.** We evaluated all libraries using the following test procedure: user opens a web form, enters a value in an input field, presses a button to submit the form, and confirms that the value is displayed in a label. The test procedure was executed against the combination of locators specified in Table 1 (test cases) using the website implementation listed in Table 2 (figures 1 and 2) and proposed by TestRigor and Chernyshova [3, 4, 5]. 
-
-The test procedure was implemented for DotNet using Selenium/nUnit combo and for Java using Maven/TestNg/Selenium. The test cases were executed in Healenium's docker hub container to avoid conflicts with the Driver version.
+**Method.** We evaluated all libraries two test procedure. In the first one, the user opens a web form, enters a value in an input field, submit the form by pressing a button, and confirms that the value is displayed in a label (test cases 1-8 in Table 1). In the second one, the user enters a form and presses a button to reveal a hidden link (test cases 9-12 in Table 1). The test procedures were implemented in a DotNet project using Selenium/nUnit and in a Java project using Maven/TestNg/Selenium. By design, the Healenium project runs in Selenium Hub on a Docker container. The configurations of the web sites were proposed by TestRigor and Chernyshova and were illustrated in Figures 1 and 2 [3, 4, 5]. 
 
 Table 1. Test cases.
 
@@ -37,7 +35,7 @@ Table 1. Test cases.
 | TC11 | Chernyshova | #5 | - | `//div[@class='container']/button` | valid |
 | TC12 | Chernyshova | #5 | - | `//div[@class='container']/div/div/button` | broken |
 
-Table 2. Site configuration.
+Table 2. Website valid locators.
 
 | Page | Input box | Button |
 | --- | --- | --- |
@@ -47,11 +45,11 @@ Table 2. Site configuration.
 | [Site #4](demo-site/demo-site2/reveal-link1.html) | -   | `//div[@class='container']/div/div/button` |
 | [Site #5](demo-site/demo-site2/reveal-link2.html) | -   | `//div[@class='container']/button` | 
 
-Figure 1. Site 1-3 configuration.
+Figure 1. Configuration for websites 1 to 3.
 
 <img src='img/DOM_diagram_site1.png'/>
 
-Figure 2. Sites 4-5 configuration.
+Figure 2. Configuration for websites 4 and 5.
 
 <img src='img/DOM_diagram_site2.png'/>
 
@@ -70,10 +68,10 @@ Table 3. Results.
 | TC7 | x | x | ✓ | x |
 | TC8 | x | x | ✓ | x |
 | TC9 | ✓ | x | ✓ | ✓ |
-| TC10 | x | x | ✓ | x |
+| TC10 | x | x | x | x |
 | TC11 | ✓ | x | ✓ | ✓ |
 | TC12 | x | x | ✓ | x |
-| Pass rate | .5 | .0 | .83 | 0.5 |
+| Pass rate | .5 | .0 | .75 | 0.5 |
 
 <sup>1</sup> For TestRigor we got a "Java.lang.NoClassDefFoundError: com/testrigor/selfhealingselenium/infrastructure/adapters/TestrigorAdapter" error.
 

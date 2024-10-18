@@ -27,7 +27,6 @@ public class DriverManager
                 ChromeOptions options0 = new ChromeOptions();
                 options0.addArguments("--remote-allow-origins=*"); 
                 options0.addArguments("--headless=true"); 
-                //return new RemoteWebDriver(_hubUrl, options0);
                 return new ChromeDriver(options0);
 
             case ChromeHealenium:
@@ -43,7 +42,6 @@ public class DriverManager
                 options2.addArguments("--headless=true");  
                 WebDriver selfHealDriver = TestRigor.selfHeal(
                     new ChromeDriver(options2),
-                    //new RemoteWebDriver(_hubUrl, options2),
                     "o2iI0g54YEfCYq5WAMp2oRop3ox9laQWZdGoKFjeyxqOmv6LmyTm"
                 );
                 return selfHealDriver;
