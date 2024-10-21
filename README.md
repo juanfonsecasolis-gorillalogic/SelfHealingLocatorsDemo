@@ -14,7 +14,7 @@ Gorilla Logic, Sabana Business Center 10th Floor, Bv. Ernesto Rohrmoser, San Jos
 
 **Importance.** Self-healing drivers can reduce automation maintenance costs by automatically updating locators after detecting changes in the web page layout [1].
 
-**Previous work.** Doing a literacy review of self-healing libraries we found Healenium, a popular open-source solution that works with Selenium, a solid test framework used by test teams since 2004. Healenium is not free-software, meaning that using it doesn't force development teams to release their code, but is free to use and users would need to pay only if they want to get support. For the moment, Healenium only works with Java, and so do another solution called TestRigor, which is private with a fifteen-day trial [2, 3]. For C#, a different language used in automation, we found Selenium.WebDriver.SelfHealing; the only available NuGet official package for self-healing that comes with a free monthly quota. Only Healenium and TestRigor mentioned to be using of Artificial Intelligence. 
+**Previous work.** Doing a literacy review of self-healing libraries we found Healenium, a popular open-source solution that works with Selenium, a solid test framework used by test teams since 2004. Healenium is not free-software, meaning that using it doesn't force development teams to release their code, but is free to use and users would need to pay only if they want to get support. For the moment, Healenium only works with Java, and so do another solution called TestRigor, which is private with a fifteen-day trial [2, 3]. For C#, a different language used in automation, we found Selenium.WebDriver.SelfHealing; the only available NuGet official package for self-healing that comes with a free monthly quota [6]. Only Healenium and TestRigor mentioned to be using of Artificial Intelligence. 
 
 **Method.** We evaluated all libraries using two different combination of web sites and test procedures. 
 
@@ -79,7 +79,7 @@ Table 3. Results.
 | TC12 | x | x | ✓ | x |
 | Pass rate | .5 | .0 | .75 | .5 |
 
-<sup>1</sup> For TestRigor we got a "Java.lang.NoClassDefFoundError: com/testrigor/selfhealingselenium/infrastructure/adapters/TestrigorAdapter" error.
+<sup>1</sup> For TestRigor we got a _Java.lang.NoClassDefFoundError: com/testrigor/selfhealingselenium/infrastructure/adapters/TestrigorAdapter_ error.
 
 **Future work.** 
 1. Find more libraries (like LambdaTest or BrowserStack) for other languages better suited for automation, like Python or Ruby.
@@ -97,7 +97,7 @@ Please follow the steps below to reproduce the results obtained:
 mvn clean test -DDriverType=ChromeHealenium
 mvn clean test -DDriverType=ChromeTestRigor
 ```
-5. For the case of Healenium, if you run the project locally (not in Github Actions) you can see the report by accessing http://localhost:7878/healenium/report/ (hint provided by Rajasekar Kulasekaran).
+5. For the case of Healenium, if you run the project locally (not in Github Actions) you can see the report by accessing [http://localhost:7878/healenium/report/](http://localhost:7878/healenium/report/) (hint provided by Rajasekar Kulasekaran).
 
 **Note:** This solution also comes with a YAML file that runs in GitHub Actions.
 
@@ -120,3 +120,4 @@ Healenium uses an algorithm called "Longest Common Subsequence" (LCS). The algor
 3. TestRigor. [Selenium self-healing](https://testrigor.com/selenium-self-healing) (last consulted on 09/30/24).
 4. Chernyshova, A. Hungarian Testing Board - Magyar Szoftvertesztelői Tanács Egyesület. [Stabilization of E2E tests with Healenium](https://www.youtube.com/live/ttuZkpCOt3g?si=UYtog10_U-fsAae_&t=1566). YouTube (last consulted on 10/01/24).
 5. Chernyshova, A. Healenium: Self-Healing Library for Selenium Test Automation. Medium, Geek Culture. URL: https://medium.com/geekculture/healenium-self-healing-library-for-selenium-test-automation-26c2358629c5 (last consulted on 10/16/24).
+6. Richards, C. Selenium.SelfHealing.v3. Nuget, Microsoft. URL: https://www.nuget.org/packages/Selenium.SelfHealing.v3/0.99.24-beta.1 (last consulted on 21/16/24).
