@@ -12,7 +12,7 @@ Gorilla Logic, Sabana Business Center 10th Floor, Bv. Ernesto Rohrmoser, San Jos
 
 **Problem.** Evaluate some popular self-healing driver options.
 
-**Importance.** Self-healing drivers can reduce automation maintenance costs by automatically detecting changes in the web page layout and updating locators to ensure the test cases are functional [1].
+**Importance.** Self-healing drivers can reduce automation maintenance costs by automatically updating locators after detecting changes in the web page layout [1].
 
 **Previous work.** Doing a literacy review of self-healing libraries we found Healenium, a popular open-source solution that works with Selenium, a solid test framework used by test teams since 2004. Healenium is not free-software, meaning that using it doesn't force development teams to release their code, but is free to use and users would need to pay only if they want to get support. For the moment, Healenium only works with Java, and so do another solution called TestRigor, which is private with a fifteen-day trial [2, 3]. For C#, a different language used in automation, we found Selenium.WebDriver.SelfHealing; the only available NuGet official package for self-healing that comes with a free monthly quota. Only Healenium and TestRigor mentioned to be using of Artificial Intelligence. 
 
