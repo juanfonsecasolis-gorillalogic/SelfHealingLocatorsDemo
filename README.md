@@ -16,7 +16,13 @@ Gorilla Logic, Sabana Business Center 10th Floor, Bv. Ernesto Rohrmoser, San Jos
 
 **Previous work.** Doing a literacy review of self-healing libraries we found Healenium, a popular open-source solution that works with Selenium, a solid test framework used by test teams since 2004. Healenium is not free-software, meaning that using it doesn't force development teams to release their code, but is free to use and users would need to pay only if they want to get support. For the moment, Healenium only works with Java, and so do another solution called TestRigor, which is private with a fifteen-day trial [2, 3]. For C#, a different language used in automation, we found Selenium.WebDriver.SelfHealing; the only available NuGet official package for self-healing that comes with a free monthly quota. Only Healenium and TestRigor mentioned to be using of Artificial Intelligence. 
 
-**Method.** We evaluated all libraries using two test procedures. In the first one, the user opens a web form, enters a value in an input field, submit the form by pressing a button, and confirms that the value is displayed in a label (test cases 1-8 in Table 1). In the second one, the user enters a form and presses a button to reveal a hidden link (test cases 9-12 in Table 1). The test procedures were implemented in a DotNet project using Selenium/nUnit and in a Java project using Maven/TestNg/Selenium. By design, the Healenium project runs in Selenium Hub on a Docker container. The configurations of the web sites were proposed by TestRigor and Chernyshova and were illustrated in Figures 1 and 2 [3, 4, 5]. 
+**Method.** We evaluated all libraries using two different combination of web sites and test procedures. 
+
+The first configuration is illustrated in Figure 1 and consists in a mix of scenarios proposed by TestRigor and Chernyshova; on it the user opens a web form, enters a value in an input field, submit the form by pressing a button, and confirms that the value is displayed in a label (test cases 1-8 in Table 1) [3, 4]. 
+
+The second configuration is depicted in Figure 2 and was proposed by Chernyshova; on it the user presses a button to reveal a hidden link in a form (test cases 9-12 in Table 1) [5]. 
+
+All test procedures were implemented in both, a DotNet/Selenium/nUnit project and a Java/Maven/TestNg/Selenium project. For Java, we chose Selenium Hub on a Docker container for using Healenium.. 
 
 Table 1. Test cases.
 
