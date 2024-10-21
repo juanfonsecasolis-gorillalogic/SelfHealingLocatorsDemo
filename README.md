@@ -59,7 +59,7 @@ Figure 2. Configuration for websites 4 and 5.
 
 <img src='img/DOM_diagram_site2.png'/>
 
-**Results.** As shown by Table 3, Healenium is the solution with the highest pass-rate and the only one that passed its own proposed scenario. 
+**Results.** As shown by Table 3, Healenium is the solution with the highest pass rate and the only one that passed almost all of its own proposed scenario. 
 
 Table 3. Results. 
 
