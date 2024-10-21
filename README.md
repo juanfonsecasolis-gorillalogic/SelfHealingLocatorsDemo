@@ -18,11 +18,11 @@ Gorilla Logic, Sabana Business Center 10th Floor, Bv. Ernesto Rohrmoser, San Jos
 
 **Method.** We evaluated all libraries using two different combination of web sites and test procedures. 
 
-The first configuration is illustrated in Figure 1 and consists in a mix of scenarios proposed by TestRigor and Chernyshova; on it the user opens a web form, enters a value in an input field, submit the form by pressing a button, and confirms that the value is displayed in a label (test cases 1-8 in Table 1) [3, 4]. 
+The first configuration is illustrated in Figure 1 and consists in a mix of scenarios proposed by TestRigor and Chernyshova; on it the user opens a web form, enters a value in an input field, submit the form by pressing a button, and confirms that the value is displayed in a label. This configuration corresponds to test cases 1-8 in Table 1 and sites 1-3 in Table 2 [3, 4]. 
 
-The second configuration is depicted in Figure 2 and was proposed by Chernyshova; on it the user presses a button to reveal a hidden link in a form (test cases 9-12 in Table 1) [5]. 
+The second configuration is depicted in Figure 2 and was proposed by Chernyshova; on it the user presses a button to reveal a hidden link in a form. This configuration corresponds to test cases 9-12 in Table 1 and sites 4-5 on Table 2 [5]. 
 
-All test procedures were implemented in both, a DotNet/Selenium/nUnit project and a Java/Maven/TestNg/Selenium project. For Java, we chose Selenium Hub on a Docker container for using Healenium.. 
+All test procedures were implemented in both, a DotNet/Selenium/nUnit project and a Java/Maven/TestNg/Selenium project. For Java, we chose Selenium Hub on a Docker container for using Healenium. 
 
 Table 1. Test cases.
 
