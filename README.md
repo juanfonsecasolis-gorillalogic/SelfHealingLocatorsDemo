@@ -14,7 +14,7 @@ Gorilla Logic, Sabana Business Center 10th Floor, Bv. Ernesto Rohrmoser, San Jos
 
 **Importance.** Self-healing drivers can reduce automation maintenance costs by automatically detecting changes in the web page layout and updating locators to ensure the test cases are functional [1].
 
-**Theory.** Selenium.WebDriver.SelfHealing is the only available library for DotNet in the NuGet repository, and Healenium and TestRigor are only Java libraries. Selenium.WebDriver.SelfHealing offers a free monthly quota, Healenium is free without limit, and TestRigor is private with a fifteen-day trial [2, 3]. Only Healenium and TestRigor mentioned to be using of Artificial Intelligence. 
+**Previous work.** Doing a literacy review of self-healing libraries we found Healenium, a popular open-source solution that works with Selenium, a solid test framework used by test teams since 2004. Healenium is not free-software, meaning that using it doesn't force development teams to release their code, but is free to use and users would need to pay only if they want to get support. For the moment, Healenium only works with Java, and so do another solution called TestRigor, which is private with a fifteen-day trial [2, 3]. For C#, a different language used in automation, we found Selenium.WebDriver.SelfHealing; the only available NuGet official package for self-healing that comes with a free monthly quota. Only Healenium and TestRigor mentioned to be using of Artificial Intelligence. 
 
 **Method.** We evaluated all libraries using two test procedures. In the first one, the user opens a web form, enters a value in an input field, submit the form by pressing a button, and confirms that the value is displayed in a label (test cases 1-8 in Table 1). In the second one, the user enters a form and presses a button to reveal a hidden link (test cases 9-12 in Table 1). The test procedures were implemented in a DotNet project using Selenium/nUnit and in a Java project using Maven/TestNg/Selenium. By design, the Healenium project runs in Selenium Hub on a Docker container. The configurations of the web sites were proposed by TestRigor and Chernyshova and were illustrated in Figures 1 and 2 [3, 4, 5]. 
 
@@ -76,9 +76,9 @@ Table 3. Results.
 <sup>1</sup> For TestRigor we got a "Java.lang.NoClassDefFoundError: com/testrigor/selfhealingselenium/infrastructure/adapters/TestrigorAdapter" error.
 
 **Future work.** 
-1. Investigate a solution for the "TestrigorAdapter" issue.
+1. Find more libraries (like LambdaTest or BrowserStack) for other languages better suited for automation, like Python or Ruby.
+2. Find a solution for the TestRigor's "TestrigorAdapter" issue.
 2. Evaluate the chosen libraries against more test cases and websites.
-3. Incorporate more self-healing libraries (like LambdaTest or BrowserStack).
 
 ## Reproducible results
 
