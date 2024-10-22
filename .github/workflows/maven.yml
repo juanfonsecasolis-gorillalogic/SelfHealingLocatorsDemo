@@ -106,7 +106,7 @@ jobs:
       env:
         TEST_RIGOR_API_KEY: ${{ secrets.TEST_RIGOR_API_KEY }}
       run: |
-        mvn clean test -DdriverType=ChromeTestRigor -Dkey="%TEST_RIGOR_API_KEY%"
+        mvn clean test -DdriverType=ChromeTestRigor -Dkey="$TEST_RIGOR_API_KEY"
       continue-on-error: true
   
     - uses: actions/upload-artifact@v4
