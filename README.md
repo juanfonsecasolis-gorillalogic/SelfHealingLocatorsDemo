@@ -91,12 +91,12 @@ Table 3. Results.
 Please follow the steps below to reproduce the results obtained:
 1. Clone [https://github.com/juanfonsecasolis-gorillalogic/SelfHealingLocatorsDemo](https://github.com/juanfonsecasolis-gorillalogic/SelfHealingLocatorsDemo)
 2. If executing for the first time, run `cd healenium; docker-compose up -d;`, otherwise start the Healenium's containers using Docker Desktop.
-3. Execute the non-self-healing suite: `cd ..; mvn clean test -DDriverType=Chrome -Dkey=null`.
+3. Execute the non-self-healing suite: `cd ..; mvn clean test -DdriverType=Chrome -Dkey=null`.
 4. Copy the test report at target/surefire-reports/index.html to a folder named Chrome.
 5. Repeat steps 2-3 with the other suites:
 ```
-mvn clean test -DDriverType=ChromeHealenium -Dkey=null
-mvn clean test -DDriverType=ChromeTestRigor -Dkey="%TEST_RIGOR_API_KEY%"
+mvn clean test -DdriverType=ChromeHealenium -Dkey=null
+mvn clean test -DdriverType=ChromeTestRigor -Dkey="%TEST_RIGOR_API_KEY%"
 ```
 6. For the case of Healenium, if you run the project locally (not in Github Actions) you can see the report by accessing [http://localhost:7878/healenium/report/](http://localhost:7878/healenium/report/) (hint provided by Rajasekar Kulasekaran).
 

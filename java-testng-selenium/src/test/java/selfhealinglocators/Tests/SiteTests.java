@@ -11,6 +11,7 @@ import selfhealinglocators.Helpers.DriverManager;
 import selfhealinglocators.Helpers.DriverManager.DriverType;
 import selfhealinglocators.Pages.FormPageSite123;
 import selfhealinglocators.Pages.FormPageSite45;
+import com.testrigor.selfhealingselenium.application.SelfHealingDriver;
 
 public class SiteTests extends TestBase
 {
@@ -40,10 +41,10 @@ public class SiteTests extends TestBase
         String expectedMessage = "Testing site 123";
         FormPageSite123 formPage = new FormPageSite123(url, inputTextLocator, updateButtonLocator, webDriver);
 
-        /*if(_driverType==DriverType.ChromeTestRigor)
+        if(driverType==DriverType.ChromeTestRigor)
         {
-            ((SelfHealingDriver) _driver).setTestCaseName("test");
-        }*/
+            ((SelfHealingDriver) webDriver).setTestCaseName("TestSite123");
+        }
         
         // act
         formPage.updateLabel(expectedMessage);
@@ -59,10 +60,10 @@ public class SiteTests extends TestBase
         String expectedMessage = "Go to Gorilla Logic site";
         FormPageSite45 formPage = new FormPageSite45(url, buttonLocator, webDriver);
         
-        /*if(_driverType==DriverType.ChromeTestRigor)
+        if(driverType==DriverType.ChromeTestRigor)
         {
-            ((SelfHealingDriver) _driver).setTestCaseName("test");
-        }*/
+            ((SelfHealingDriver) webDriver).setTestCaseName("TestSite45");
+        }
 
         // act
         formPage.revealHiddenLink();

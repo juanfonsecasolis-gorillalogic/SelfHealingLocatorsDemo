@@ -13,7 +13,7 @@
         <surefire.version>2.22.0</surefire.version>
         <testng.version>7.10.2</testng.version>
         <selenium.version>4.25.0</selenium.version>
-        <!--selenium.version>3.9.0</selenium.version-->
+        <selenium.version>LATEST</selenium.version>
         <healenium.version>3.5.3</healenium.version>
         <selenium.remoteDriver.version>4.25.0</selenium.remoteDriver.version>
         <webdrivermanager.version>5.9.2</webdrivermanager.version>
