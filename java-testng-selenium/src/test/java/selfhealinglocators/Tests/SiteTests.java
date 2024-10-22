@@ -18,10 +18,10 @@ public class SiteTests extends TestBase
     DriverType driverType;
 
     @BeforeMethod()
-    @Parameters({ "DriverType" })
-    public void setUp(DriverType driverType) throws Exception
+    @Parameters({ "driverType", "key" })
+    public void setUp(DriverType driverType, String key) throws Exception
     {
-        webDriver = DriverManager.GetWebDriver(driverType);
+        webDriver = DriverManager.GetWebDriver(driverType, key);
     }
 
     @AfterMethod()
@@ -30,9 +30,13 @@ public class SiteTests extends TestBase
     }
 
     @Test(dataProvider = "testDataSite123")
-    void TestSite123(String testCaseId, String url, By inputTextLocator, By updateButtonLocator, String classification)
+    void TestSite123(
+        String testCaseId, 
+        String url, 
+        By inputTextLocator, 
+        By updateButtonLocator, 
+        String classification) throws InterruptedException
     {
-        // arrange
         String expectedMessage = "Testing site 123";
         FormPageSite123 formPage = new FormPageSite123(url, inputTextLocator, updateButtonLocator, webDriver);
 

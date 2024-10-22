@@ -16,7 +16,7 @@ public class DriverManager
         ChromeTestRigor
     }
 
-    public static WebDriver GetWebDriver(DriverType driverType) throws Exception
+    public static WebDriver GetWebDriver(DriverType driverType, String key) throws Exception
     {
         @SuppressWarnings("deprecation")
         URL _hubUrl = new URL("http://127.0.0.1:8085/wd/hub");
@@ -39,10 +39,14 @@ public class DriverManager
             case ChromeTestRigor:
                 ChromeOptions options2 = new ChromeOptions();
                 options2.addArguments("--remote-allow-origins=*");
-                options2.addArguments("--headless=true");  
+                options2.addArguments("--headless=true"); 
+                if(!key.equals("ABC123")) 
+                {
+                    throw new Exception("Secret is not 'ABC123' but '" + key + "', aborting TestRigor driver initialization...");
+                }
                 WebDriver selfHealDriver = TestRigor.selfHeal(
                     new ChromeDriver(options2),
-                    "o2iI0g54YEfCYq5WAMp2oRop3ox9laQWZdGoKFjeyxqOmv6LmyTm"
+                    key
                 );
                 return selfHealDriver;
 
