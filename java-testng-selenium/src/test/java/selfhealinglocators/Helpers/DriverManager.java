@@ -6,7 +6,6 @@ import org.openqa.selenium.chrome.*;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import java.net.URL;
 import com.testrigor.selfhealingselenium.*;
-import org.apache.commons.codec.binary.Base64;
 
 public class DriverManager
 {
@@ -41,11 +40,6 @@ public class DriverManager
                 ChromeOptions options2 = new ChromeOptions();
                 options2.addArguments("--remote-allow-origins=*");
                 options2.addArguments("--headless=true"); 
-                if(!key.equals("ABC123")) 
-                {
-                    String encryptedKey = new String(Base64.encodeBase64(key.getBytes()));
-                    throw new Exception("Secret is not 'ABC123' but '" + encryptedKey + "', aborting TestRigor driver initialization...");
-                }
                 WebDriver selfHealDriver = TestRigor.selfHeal(
                     new ChromeDriver(options2),
                     key
